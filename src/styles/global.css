@@ -1,0 +1,234 @@
+@import "tailwindcss";
+
+/* Cyberpunk Theme Custom Styles */
+@layer base {
+  :root {
+    --cyber-pink: #ff2a6d;
+    --cyber-blue: #05d9e8;
+    --cyber-purple: #d1f7ff;
+    --cyber-yellow: #f3ea28;
+    --cyber-dark: #01012b;
+  }
+}
+
+/* Neon Glow Text */
+.neon-text {
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #05d9e8,
+    0 0 82px #05d9e8,
+    0 0 92px #05d9e8,
+    0 0 102px #05d9e8,
+    0 0 151px #05d9e8;
+}
+
+.neon-text-pink {
+  text-shadow:
+    0 0 7px #fff,
+    0 0 10px #fff,
+    0 0 21px #fff,
+    0 0 42px #ff2a6d,
+    0 0 82px #ff2a6d,
+    0 0 92px #ff2a6d;
+}
+
+/* Glitch Effect */
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(-2px, -2px);
+  }
+  60% {
+    transform: translate(2px, 2px);
+  }
+  80% {
+    transform: translate(2px, -2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+.glitch {
+  position: relative;
+  animation: glitch 0.3s infinite;
+}
+
+/* Cyber Border */
+.cyber-border {
+  position: relative;
+  border: 2px solid #05d9e8;
+  box-shadow:
+    0 0 5px #05d9e8,
+    inset 0 0 5px #05d9e8;
+}
+
+.cyber-border::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(45deg, transparent 30%, rgba(5, 217, 232, 0.1) 50%, transparent 70%);
+  animation: shine 3s infinite;
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* Floating Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+.float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Grid Background Animation */
+@keyframes grid-move {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50px);
+  }
+}
+
+.cyber-grid {
+  background-image:
+    linear-gradient(rgba(5, 217, 232, 0.1) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(5, 217, 232, 0.1) 1px, transparent 1px);
+  background-size: 50px 50px;
+  animation: grid-move 20s linear infinite;
+}
+
+/* Pulse Glow */
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 5px #05d9e8, 0 0 10px #05d9e8;
+  }
+  50% {
+    box-shadow: 0 0 20px #05d9e8, 0 0 30px #05d9e8, 0 0 40px #05d9e8;
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Scan Line Effect */
+@keyframes scan {
+  0% {
+    top: -100%;
+  }
+  100% {
+    top: 100%;
+  }
+}
+
+.scanline {
+  position: relative;
+  overflow: hidden;
+}
+
+.scanline::after {
+  content: '';
+  position: absolute;
+  top: -100%;
+  left: 0;
+  width: 100%;
+  height: 10px;
+  background: linear-gradient(transparent, rgba(5, 217, 232, 0.5), transparent);
+  animation: scan 8s linear infinite;
+}
+
+/* Fade In Up Animation */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.8s ease-out forwards;
+}
+
+/* Parallax */
+.parallax-slow {
+  transform: translateY(var(--scroll-y, 0));
+}
+
+/* Neon Button Hover */
+.neon-button {
+  transition: all 0.3s ease;
+}
+
+.neon-button:hover {
+  box-shadow:
+    0 0 5px #05d9e8,
+    0 0 10px #05d9e8,
+    0 0 15px #05d9e8,
+    inset 0 0 5px #05d9e8;
+  transform: translateY(-2px);
+}
+
+/* Matrix Rain Effect */
+@keyframes matrix {
+  0% {
+    transform: translateY(-100%);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(100vh);
+    opacity: 0;
+  }
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #01012b;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #05d9e8, #ff2a6d);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #ff2a6d, #05d9e8);
+}
+
+/* Selection */
+::selection {
+  background: #05d9e8;
+  color: #01012b;
+}

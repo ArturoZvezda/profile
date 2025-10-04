@@ -1,0 +1,69 @@
+---
+---
+
+<div class="cyber-background fixed inset-0 -z-10 overflow-hidden">
+  <!-- Animated Grid -->
+  <div class="cyber-grid absolute inset-0 opacity-30"></div>
+
+  <!-- Floating Particles -->
+  <div class="particles absolute inset-0">
+    {Array.from({ length: 20 }).map((_, i) => (
+      <div
+        class="particle absolute w-1 h-1 bg-cyan-400 rounded-full"
+        style={`
+          left: ${Math.random() * 100}%;
+          top: ${Math.random() * 100}%;
+          animation: float ${3 + Math.random() * 4}s ease-in-out infinite;
+          animation-delay: ${Math.random() * 2}s;
+          opacity: ${0.3 + Math.random() * 0.7};
+        `}
+      />
+    ))}
+  </div>
+
+  <!-- Neon Lines -->
+  <svg class="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+        <stop offset="0%" style="stop-color:#05d9e8;stop-opacity:1" />
+        <stop offset="100%" style="stop-color:#ff2a6d;stop-opacity:1" />
+      </linearGradient>
+    </defs>
+    <line x1="0" y1="20%" x2="100%" y2="20%" stroke="url(#neonGradient)" stroke-width="2" opacity="0.3">
+      <animate attributeName="y1" values="20%;25%;20%" dur="4s" repeatCount="indefinite" />
+      <animate attributeName="y2" values="20%;25%;20%" dur="4s" repeatCount="indefinite" />
+    </line>
+    <line x1="0" y1="50%" x2="100%" y2="50%" stroke="url(#neonGradient)" stroke-width="2" opacity="0.3">
+      <animate attributeName="y1" values="50%;55%;50%" dur="6s" repeatCount="indefinite" />
+      <animate attributeName="y2" values="50%;55%;50%" dur="6s" repeatCount="indefinite" />
+    </line>
+    <line x1="0" y1="80%" x2="100%" y2="80%" stroke="url(#neonGradient)" stroke-width="2" opacity="0.3">
+      <animate attributeName="y1" values="80%;75%;80%" dur="5s" repeatCount="indefinite" />
+      <animate attributeName="y2" values="80%;75%;80%" dur="5s" repeatCount="indefinite" />
+    </line>
+  </svg>
+
+  <!-- Corner Accents -->
+  <div class="absolute top-0 left-0 w-32 h-32 border-l-2 border-t-2 border-cyan-400 opacity-50"></div>
+  <div class="absolute top-0 right-0 w-32 h-32 border-r-2 border-t-2 border-pink-500 opacity-50"></div>
+  <div class="absolute bottom-0 left-0 w-32 h-32 border-l-2 border-b-2 border-pink-500 opacity-50"></div>
+  <div class="absolute bottom-0 right-0 w-32 h-32 border-r-2 border-b-2 border-cyan-400 opacity-50"></div>
+</div>
+
+<style>
+  .cyber-background {
+    background: linear-gradient(135deg, #01012b 0%, #05050f 50%, #0a0a1e 100%);
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0) translateX(0);
+    }
+    33% {
+      transform: translateY(-20px) translateX(10px);
+    }
+    66% {
+      transform: translateY(-10px) translateX(-10px);
+    }
+  }
+</style>

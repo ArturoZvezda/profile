@@ -1,0 +1,147 @@
+{
+  "nav": {
+    "about": "Sobre mí",
+    "experience": "Experiencia",
+    "projects": "Proyectos",
+    "skills": "Habilidades",
+    "contact": "Contacto"
+  },
+  "hero": {
+    "title": "Desarrollador Full-stack",
+    "subtitle": "14+ años construyendo soluciones de software",
+    "description": "Programador full-stack experimentado especializado en Laravel, Vue.js y tecnologías web modernas. Con experiencia en comercio electrónico, retail, telecomunicaciones y DevOps.",
+    "cta": "Contáctame"
+  },
+  "about": {
+    "title": "Sobre mí",
+    "text": "Como programador full-stack experimentado, aporto más de 14 años de experiencia desarrollando soluciones de software diversas en comercio electrónico, retail y telecomunicaciones. Durante los últimos 7 años, me he especializado en Laravel Framework, creando aplicaciones para usuarios finales e integraciones middleware. Mi experiencia incluye Vue.js, .NET (C#), Java, Ionic Framework y servicios de IA en la nube como AWS Textract y Google Cloud Vision."
+  },
+  "experience": {
+    "title": "Experiencia",
+    "current": "Presente",
+    "jobs": [
+      {
+        "company": "B Process (OADPRS)",
+        "role": "Desarrollador Web Full-stack",
+        "period": "Febrero 2024 - Presente",
+        "description": "Desarrollo y mantenimiento de sistemas de gestión interna. Integración de soluciones biométricas de terceros. Implementación de herramientas DevOps para ambientes de QA y Dev.",
+        "stack": "Laravel, MySQL, Angular, .NET 6.0 Core"
+      },
+      {
+        "company": "We Are The Robots",
+        "role": "Desarrollador Web Full-stack",
+        "period": "Mayo 2018 - Diciembre 2023",
+        "description": "Desarrollo de plataformas web usando Laravel y Vue.js. Desarrollo móvil con Ionic Framework. Actividades de preventa, liderazgo técnico y responsabilidades DevOps.",
+        "stack": "Laravel, Ionic, Tailwind, MySQL, Vue.js"
+      },
+      {
+        "company": "Abugaber",
+        "role": "Desarrollador Web Full-stack",
+        "period": "Marzo 2016 - Marzo 2018",
+        "description": "Desarrollo de framework PHP/JavaScript. Levantamiento de requerimientos e implementación de sistemas de soporte.",
+        "stack": "PHP, JavaScript, MySQL"
+      },
+      {
+        "company": "Nextel de México",
+        "role": "Ingeniero DevOps",
+        "period": "2008-2009, 2013-2014",
+        "description": "Diseño y desarrollo de OSS para monitoreo de infraestructura. Tareas DevOps para solución de problemas de infraestructura.",
+        "stack": "ASP .NET, C#, Java, SQL Server, Oracle, Netcool/Ómnibus"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Proyectos Destacados",
+    "subtitle": "Soluciones en Múltiples Sectores Industriales",
+    "items": [
+      {
+        "title": "Sistemas Punto de Venta",
+        "industry": "Hospitalidad y Restaurantes",
+        "description": "Soporte técnico y optimización de infraestructura POS para restaurantes, incluyendo conciliación de transacciones, rastreo de faltantes en inventario y sistemas de reporteo automatizado.",
+        "highlights": ["Conciliación de Transacciones", "Gestión de Inventario", "Reporteo Automatizado", "Soporte Hardware/Software"],
+        "stack": "PHP, OpenCart, SQL Server"
+      },
+      {
+        "title": "Plataforma OSS para Telecom",
+        "industry": "Telecomunicaciones",
+        "description": "Desarrollo de Sistemas de Soporte Operacional para infraestructura de telecomunicaciones, incluyendo monitoreo de elementos de red, scripts automatizados de verificación de estado, sistema de tickets de incidentes y daemons de monitoreo de servicio SMS.",
+        "highlights": ["Monitoreo de Red", "Automatización de Health-Check", "Gestión de Incidentes", "Monitoreo de Servicio SMS"],
+        "stack": "PHP, MySQL, CodeIgniter"
+      },
+      {
+        "title": "Seguridad y Rastreo de Flotas",
+        "industry": "Logística y Seguridad",
+        "description": "Plataforma integral de seguridad móvil para monitoreo de transporte de carga y personal. Incluye rastreo GPS en tiempo real, captura de evidencia fotográfica, reporteo de rutas y gestión centralizada de servicios.",
+        "highlights": ["Rastreo GPS en Tiempo Real", "Captura Móvil de Evidencia", "Visualización de Rutas", "Contabilidad de Servicios"],
+        "stack": "Laravel, MySQL, Google Maps API, Ionic Framework"
+      },
+      {
+        "title": "Automatización de Acceso a Red Empresarial",
+        "industry": "TI en Salud",
+        "description": "Sistema automatizado de gestión de acceso WiFi para invitados, integrando registros de pacientes SAP con infraestructura de red Cisco ISE mediante mensajería HL7 para aprovisionamiento y desaprovisionamiento automático.",
+        "highlights": ["Integración SAP-CISCO ISE", "Mensajería HL7", "Portal de Autoservicio", "Aprovisionamiento Automatizado"],
+        "stack": "Laravel, Java SE, SQL Server, APIs Cisco ISE, Ionic"
+      },
+      {
+        "title": "Extracción de Datos de Productos con IA",
+        "industry": "Retail y E-commerce",
+        "description": "Solución inteligente de OCR utilizando AWS Textract y Google Vision AI para automatizar la extracción de información de productos desde fotografías de empaques, mejorando la calidad de datos y reduciendo tiempo de captura manual.",
+        "highlights": ["OCR con Visión Computacional", "Machine Learning", "Mejora de Calidad de Datos", "Procesamiento por Lotes"],
+        "stack": "Laravel, Livewire, MySQL, AWS Textract, Google Vision API"
+      },
+      {
+        "title": "Plataforma de Gestión de Donaciones",
+        "industry": "ONGs e Impacto Social",
+        "description": "Plataforma e-commerce de código abierto personalizada para organizaciones sin fines de lucro para gestionar donaciones, rastrear contribuciones y apoyar iniciativas de bienestar social.",
+        "highlights": ["Recaudación de Fondos Online", "Rastreo de Contribuciones", "Código Abierto", "Impacto Social"],
+        "stack": "PHP, OpenCart, MySQL"
+      },
+      {
+        "title": "Gestión Biométrica de Población Institucional",
+        "industry": "Seguridad Institucional",
+        "description": "Plataforma integral de registro biométrico y rastreo con integración de dispositivos de terceros, con arquitectura de microservicios para gestión de datos personales, captura biométrica y monitoreo de actividades.",
+        "highlights": ["Registro Biométrico", "Rastreo de Ubicación", "Arquitectura de Microservicios", "Integración de Dispositivos"],
+        "stack": "Laravel, MySQL, .NET Framework, Ionic, Microservicios"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Habilidades y Tecnologías",
+    "categories": {
+      "languages": {
+        "title": "Lenguajes",
+        "advanced": "Avanzado",
+        "intermediate": "Intermedio",
+        "items": {
+          "advanced": ["HTML/CSS", "JavaScript", "SQL", "PHP"],
+          "intermediate": ["Node.js", "Angular", "Java", "C#"]
+        }
+      },
+      "frameworks": {
+        "title": "Frameworks y Herramientas",
+        "items": {
+          "advanced": ["Laravel", "CodeIgniter"],
+          "intermediate": ["Vue.js", "Tailwind CSS", "Ionic"]
+        }
+      },
+      "other": {
+        "title": "Otros",
+        "items": ["Scrum", "VS Code", "Linux", "MySQL", "Oracle", "AWS Textract", "Google Cloud Vision", "APIs Cisco ISE"]
+      }
+    }
+  },
+  "contact": {
+    "title": "Trabajemos Juntos",
+    "subtitle": "Disponible para proyectos freelance y oportunidades de tiempo completo",
+    "location": "Ciudad de México, México (UTC-6)",
+    "buttons": {
+      "whatsapp": "WhatsApp",
+      "email": "Correo",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "footer": {
+    "rights": "Todos los derechos reservados",
+    "made": "Construido con Astro y Tailwind CSS"
+  }
+}

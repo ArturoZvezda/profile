@@ -1,0 +1,147 @@
+{
+  "nav": {
+    "about": "About",
+    "experience": "Experience",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Fullstack Developer",
+    "subtitle": "14+ years building software solutions",
+    "description": "Seasoned full-stack programmer specializing in Laravel, Vue.js, and modern web technologies. Experienced in ecommerce, retail, telecom, and DevOps.",
+    "cta": "Get in touch"
+  },
+  "about": {
+    "title": "About Me",
+    "text": "As a seasoned full-stack programmer, I bring over 14 years of experience developing diverse software solutions across ecommerce, retail, and telecom industries. For the past 7 years, I've specialized in Laravel Framework, building end-user applications and middleware integrations. My expertise includes Vue.js, .NET (C#), Java, Ionic Framework, and cloud AI services like AWS Textract and Google Cloud Vision."
+  },
+  "experience": {
+    "title": "Experience",
+    "current": "Present",
+    "jobs": [
+      {
+        "company": "B Process (OADPRS)",
+        "role": "Full-stack Web Developer",
+        "period": "February 2024 - Present",
+        "description": "Development and maintenance of internal management systems. Integration of third-party biometric solutions. Implementation of DevOps tools for QA and Dev environments.",
+        "stack": "Laravel, MySQL, Angular, .NET 6.0 Core"
+      },
+      {
+        "company": "We Are The Robots",
+        "role": "Full-stack Web Developer",
+        "period": "May 2018 - December 2023",
+        "description": "Development of web platforms using Laravel and Vue.js. Mobile development with Ionic Framework. Presale activities, technical leadership, and DevOps responsibilities.",
+        "stack": "Laravel, Ionic, Tailwind, MySQL, Vue.js"
+      },
+      {
+        "company": "Abugaber",
+        "role": "Full-stack Web Developer",
+        "period": "March 2016 - March 2018",
+        "description": "Development of PHP/JavaScript framework. Requirements gathering and implementation of support systems.",
+        "stack": "PHP, JavaScript, MySQL"
+      },
+      {
+        "company": "Nextel de Mexico",
+        "role": "DevOps Engineer",
+        "period": "2008-2009, 2013-2014",
+        "description": "Designed and developed OSS for infrastructure monitoring. DevOps tasks for troubleshooting infrastructure issues.",
+        "stack": "ASP .NET, C#, Java, SQL Server, Oracle, Netcool/Ómnibus"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Featured Projects",
+    "subtitle": "Industry Solutions Across Multiple Sectors",
+    "items": [
+      {
+        "title": "Point of Sale Systems",
+        "industry": "Hospitality & Restaurant",
+        "description": "Technical support and optimization for restaurant POS infrastructure, including transaction reconciliation, inventory discrepancy tracking, and automated reporting systems.",
+        "highlights": ["Transaction Reconciliation", "Inventory Management", "Automated Reporting", "Hardware/Software Support"],
+        "stack": "PHP, OpenCart, SQL Server"
+      },
+      {
+        "title": "Telecom OSS Platform",
+        "industry": "Telecommunications",
+        "description": "Development of Operational Support Systems for telecom infrastructure, including network element monitoring, automated health-check scripts, trouble ticketing, and SMS service monitoring daemons.",
+        "highlights": ["Network Monitoring", "Health-Check Automation", "Incident Management", "SMS Service Monitoring"],
+        "stack": "PHP, MySQL, CodeIgniter"
+      },
+      {
+        "title": "Fleet Security & Tracking",
+        "industry": "Logistics & Security",
+        "description": "Comprehensive mobile security platform for cargo and personnel transport monitoring. Features real-time GPS tracking, photographic evidence capture, route reporting, and centralized service management.",
+        "highlights": ["Real-time GPS Tracking", "Mobile Evidence Capture", "Route Visualization", "Service Accounting"],
+        "stack": "Laravel, MySQL, Google Maps API, Ionic Framework"
+      },
+      {
+        "title": "Enterprise Network Access Automation",
+        "industry": "Healthcare IT",
+        "description": "Automated WiFi guest access management system integrating SAP patient records with Cisco ISE network infrastructure using HL7 messaging for seamless provisioning and deprovisioning.",
+        "highlights": ["SAP-CISCO ISE Integration", "HL7 Messaging", "Self-Service Portal", "Automated Provisioning"],
+        "stack": "Laravel, Java SE, SQL Server, Cisco ISE APIs, Ionic"
+      },
+      {
+        "title": "AI-Powered Product Data Extraction",
+        "industry": "Retail & E-commerce",
+        "description": "Intelligent OCR solution using AWS Textract and Google Vision AI to automate product information extraction from packaging photos, improving data quality and reducing manual entry time.",
+        "highlights": ["Computer Vision OCR", "Machine Learning", "Data Quality Improvement", "Batch Processing"],
+        "stack": "Laravel, Livewire, MySQL, AWS Textract, Google Vision API"
+      },
+      {
+        "title": "Donation Management Platform",
+        "industry": "Non-Profit & Social Impact",
+        "description": "Open-source e-commerce platform customized for non-profit organizations to manage donations, track contributions, and support social welfare initiatives.",
+        "highlights": ["Online Fundraising", "Contribution Tracking", "Open Source", "Social Impact"],
+        "stack": "PHP, OpenCart, MySQL"
+      },
+      {
+        "title": "Biometric Population Management",
+        "industry": "Institutional Security",
+        "description": "Comprehensive biometric registration and tracking platform with third-party device integration, featuring microservices architecture for personal data management, biometric capture, and activity monitoring.",
+        "highlights": ["Biometric Registration", "Location Tracking", "Microservices Architecture", "Device Integration"],
+        "stack": "Laravel, MySQL, .NET Framework, Ionic, Microservices"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Skills & Technologies",
+    "categories": {
+      "languages": {
+        "title": "Languages",
+        "advanced": "Advanced",
+        "intermediate": "Intermediate",
+        "items": {
+          "advanced": ["HTML/CSS", "JavaScript", "SQL", "PHP"],
+          "intermediate": ["Node.js", "Angular", "Java", "C#"]
+        }
+      },
+      "frameworks": {
+        "title": "Frameworks & Tools",
+        "items": {
+          "advanced": ["Laravel", "CodeIgniter"],
+          "intermediate": ["Vue.js", "Tailwind CSS", "Ionic"]
+        }
+      },
+      "other": {
+        "title": "Other",
+        "items": ["Scrum", "VS Code", "Linux", "MySQL", "Oracle", "AWS Textract", "Google Cloud Vision", "Cisco ISE APIs"]
+      }
+    }
+  },
+  "contact": {
+    "title": "Let's Work Together",
+    "subtitle": "Available for freelance projects and full-time opportunities",
+    "location": "Mexico City, Mexico (UTC-6)",
+    "buttons": {
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "footer": {
+    "rights": "All rights reserved",
+    "made": "Built with Astro & Tailwind CSS"
+  }
+}
