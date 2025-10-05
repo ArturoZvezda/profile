@@ -3,18 +3,22 @@ import Layout from '../layouts/Layout.astro';
 import CyberBackground from '../components/CyberBackground.astro';
 import Header from '../components/Header.astro';
 import Hero from '../components/Hero.astro';
+import TechMarquee from '../components/TechMarquee.astro';
 import About from '../components/About.astro';
 import Experience from '../components/Experience.astro';
 import Projects from '../components/Projects.astro';
+import Consulting from '../components/Consulting.astro';
 import Skills from '../components/Skills.astro';
 import Contact from '../components/Contact.astro';
 
 import enTranslations from '../i18n/en.json';
 import esTranslations from '../i18n/es.json';
+import frTranslations from '../i18n/fr.json';
 
 const translations = {
   en: enTranslations,
-  es: esTranslations
+  es: esTranslations,
+  fr: frTranslations
 };
 ---
 
@@ -24,22 +28,19 @@ const translations = {
     <Header t={translations.en} />
     <main>
       <Hero t={translations.en} />
+      <TechMarquee />
       <About t={translations.en} />
+      <Consulting t={translations.en} />
       <Experience t={translations.en} />
       <Projects t={translations.en} />
       <Skills t={translations.en} />
       <Contact t={translations.en} />
     </main>
 
-    <footer class="relative bg-[#01012b]/80 border-t-2 border-cyan-400/30 text-gray-400 py-8 backdrop-blur-sm">
+    <footer class="relative bg-[#0a0a0a] border-t border-[#2a2a2a] text-gray-600 py-12">
       <div class="container mx-auto px-4 text-center">
-        <p id="footer-rights" class="text-cyan-300 font-medium">© 2024 Arturo Zvezda {translations.en.footer.rights}</p>
-        <p id="footer-made" class="text-sm mt-2 text-gray-500">{translations.en.footer.made}</p>
-        <div class="mt-4 flex justify-center gap-2">
-          <div class="w-2 h-2 bg-cyan-400 rounded-full animate-pulse"></div>
-          <div class="w-2 h-2 bg-pink-500 rounded-full animate-pulse" style="animation-delay: 0.5s;"></div>
-          <div class="w-2 h-2 bg-purple-400 rounded-full animate-pulse" style="animation-delay: 1s;"></div>
-        </div>
+        <p id="footer-rights" class="text-sm">© 2024 Arturo Zvezda. {translations.en.footer.rights}</p>
+        <p id="footer-made" class="text-xs mt-2 text-gray-700">{translations.en.footer.made}</p>
       </div>
     </footer>
   </div>
@@ -47,15 +48,24 @@ const translations = {
   <script define:vars={{ translations }}>
     let currentLang = 'en';
 
+    const langLabels = {
+      'en': 'EN',
+      'es': 'ES',
+      'fr': 'FR'
+    };
+
     function updateContent(lang) {
       const t = translations[lang];
       currentLang = lang;
       document.getElementById('app').dataset.lang = lang;
 
-      // Update all language toggle buttons
-      document.querySelectorAll('.lang-text').forEach(el => {
-        el.textContent = lang === 'en' ? 'ES' : 'EN';
-      });
+      // Update language switcher labels
+      document.querySelector('.current-lang').textContent = langLabels[lang];
+      document.querySelector('.current-lang-mobile').textContent = langLabels[lang];
+
+      // Close dropdown menus
+      document.getElementById('lang-menu-desktop')?.classList.add('hidden');
+      document.getElementById('lang-menu-mobile')?.classList.add('hidden');
 
       // Update nav
       const navLinks = document.querySelectorAll('nav a');
@@ -75,8 +85,36 @@ const translations = {
       document.querySelectorAll('h2')[1].textContent = t.about.title;
       document.querySelector('#about p').textContent = t.about.text;
 
+      // Update consulting
+      document.querySelectorAll('h2')[2].textContent = t.consulting.title;
+      const consultingBadge = document.querySelector('#consulting .subtle-float span');
+      if (consultingBadge) consultingBadge.textContent = t.consulting.badge;
+      const consultingSubtitle = document.querySelector('#consulting h2 + p.text-lg');
+      if (consultingSubtitle) consultingSubtitle.textContent = t.consulting.subtitle;
+      const consultingDesc = document.querySelector('#consulting h2 + p.text-lg + p');
+      if (consultingDesc) consultingDesc.textContent = t.consulting.description;
+
+      // Update consulting services
+      const serviceCards = document.querySelectorAll('.consulting-card');
+      serviceCards.forEach((card, i) => {
+        if (t.consulting.services[i]) {
+          const title = card.querySelector('h3');
+          const desc = card.querySelector('p');
+          if (title) title.textContent = t.consulting.services[i].title;
+          if (desc) desc.textContent = t.consulting.services[i].description;
+        }
+      });
+
+      // Update consulting CTA
+      const ctaTitle = document.querySelector('#consulting .cta-box h3');
+      const ctaDesc = document.querySelector('#consulting .cta-box p');
+      const ctaBtn = document.querySelector('#consulting .cta-box a');
+      if (ctaTitle) ctaTitle.textContent = t.consulting.cta.title;
+      if (ctaDesc) ctaDesc.textContent = t.consulting.cta.description;
+      if (ctaBtn) ctaBtn.textContent = t.consulting.cta.button;
+
       // Update experience
-      document.querySelectorAll('h2')[2].textContent = t.experience.title;
+      document.querySelectorAll('h2')[3].textContent = t.experience.title;
       const jobs = document.querySelectorAll('#experience > div > div > div');
       jobs.forEach((job, i) => {
         const jobData = t.experience.jobs[i];
@@ -86,15 +124,94 @@ const translations = {
         job.querySelector('p').textContent = jobData.description;
       });
 
-      // Update projects - Note: Projects are complex and handled on page load
-      // For simplicity, we'll just update titles
-      document.querySelectorAll('h2')[3].textContent = t.projects.title;
+      // Update projects
+      document.querySelectorAll('h2')[4].textContent = t.projects.title;
+      const projectsSubtitle = document.querySelector('#projects p.text-base');
+      if (projectsSubtitle) projectsSubtitle.textContent = t.projects.subtitle;
+
+      // Update project cards
+      const projectCards = document.querySelectorAll('.project-card');
+      projectCards.forEach((card, i) => {
+        if (t.projects.items[i]) {
+          const project = t.projects.items[i];
+
+          // Update featured badge
+          const featuredBadge = card.querySelector('.absolute.top-0.right-0');
+          if (featuredBadge) featuredBadge.textContent = t.projects.featured;
+
+          // Update industry badge
+          const industryBadge = card.querySelector('span.px-3.py-1');
+          if (industryBadge) industryBadge.textContent = project.industry;
+
+          // Update title and description
+          const title = card.querySelector('h3');
+          const desc = card.querySelector('p.text-sm');
+          if (title) title.textContent = project.title;
+          if (desc) desc.textContent = project.description;
+
+          // Update "Key Features" label
+          const keyFeaturesLabel = card.querySelectorAll('h4')[0];
+          if (keyFeaturesLabel) keyFeaturesLabel.textContent = t.projects.keyFeatures;
+
+          // Update highlights
+          const highlights = card.querySelectorAll('.flex.items-start.gap-2 span');
+          highlights.forEach((highlight, idx) => {
+            if (project.highlights[idx]) {
+              highlight.textContent = project.highlights[idx];
+            }
+          });
+
+          // Update "Tech Stack" label
+          const techStackLabel = card.querySelectorAll('h4')[1];
+          if (techStackLabel) techStackLabel.textContent = t.projects.techStack;
+        }
+      });
+
+      // Update industries served
+      const industriesLabel = document.querySelector('#projects h4.text-sm');
+      if (industriesLabel) industriesLabel.textContent = t.projects.industriesServed;
+
+      const industryTags = document.querySelectorAll('#projects .flex.flex-wrap.gap-3 span');
+      industryTags.forEach((tag, i) => {
+        if (t.projects.industries[i]) {
+          tag.textContent = t.projects.industries[i];
+        }
+      });
 
       // Update skills
-      document.querySelectorAll('h2')[4].textContent = t.skills.title;
+      document.querySelectorAll('h2')[5].textContent = t.skills.title;
+
+      // Update skills categories
+      const skillCategories = document.querySelectorAll('#skills .mb-8');
+
+      // Languages category
+      if (skillCategories[0]) {
+        const langTitle = skillCategories[0].querySelector('h3');
+        const advancedLabel = skillCategories[0].querySelectorAll('h4')[0];
+        const intermediateLabel = skillCategories[0].querySelectorAll('h4')[1];
+        if (langTitle) langTitle.textContent = t.skills.categories.languages.title;
+        if (advancedLabel) advancedLabel.textContent = t.skills.categories.languages.advanced;
+        if (intermediateLabel) intermediateLabel.textContent = t.skills.categories.languages.intermediate;
+      }
+
+      // Frameworks category
+      if (skillCategories[1]) {
+        const fwTitle = skillCategories[1].querySelector('h3');
+        const advancedLabel = skillCategories[1].querySelectorAll('h4')[0];
+        const intermediateLabel = skillCategories[1].querySelectorAll('h4')[1];
+        if (fwTitle) fwTitle.textContent = t.skills.categories.frameworks.title;
+        if (advancedLabel) advancedLabel.textContent = t.skills.categories.frameworks.advanced || t.skills.categories.languages.advanced;
+        if (intermediateLabel) intermediateLabel.textContent = t.skills.categories.frameworks.intermediate || t.skills.categories.languages.intermediate;
+      }
+
+      // Other category
+      if (skillCategories[2]) {
+        const otherTitle = skillCategories[2].querySelector('h3');
+        if (otherTitle) otherTitle.textContent = t.skills.categories.other.title;
+      }
 
       // Update contact
-      document.querySelectorAll('h2')[5].textContent = t.contact.title;
+      document.querySelectorAll('h2')[6].textContent = t.contact.title;
       document.querySelector('#contact > div > p').textContent = t.contact.subtitle;
       document.querySelector('#contact span').textContent = t.contact.location;
 
@@ -108,15 +225,42 @@ const translations = {
       document.getElementById('footer-made').textContent = t.footer.made;
     }
 
-    // Language toggle for both mobile and desktop
-    document.getElementById('lang-toggle-desktop')?.addEventListener('click', () => {
-      const newLang = currentLang === 'en' ? 'es' : 'en';
-      updateContent(newLang);
+    // Language switcher - Desktop
+    document.getElementById('lang-button-desktop')?.addEventListener('click', () => {
+      const menu = document.getElementById('lang-menu-desktop');
+      menu?.classList.toggle('hidden');
     });
 
-    document.getElementById('lang-toggle-mobile')?.addEventListener('click', () => {
-      const newLang = currentLang === 'en' ? 'es' : 'en';
-      updateContent(newLang);
+    // Language switcher - Mobile
+    document.getElementById('lang-button-mobile')?.addEventListener('click', () => {
+      const menu = document.getElementById('lang-menu-mobile');
+      menu?.classList.toggle('hidden');
+    });
+
+    // Language option clicks - Desktop
+    document.querySelectorAll('.lang-option').forEach(option => {
+      option.addEventListener('click', (e) => {
+        const lang = e.target.dataset.lang;
+        updateContent(lang);
+      });
+    });
+
+    // Language option clicks - Mobile
+    document.querySelectorAll('.lang-option-mobile').forEach(option => {
+      option.addEventListener('click', (e) => {
+        const lang = e.target.dataset.lang;
+        updateContent(lang);
+      });
+    });
+
+    // Close dropdowns when clicking outside
+    document.addEventListener('click', (e) => {
+      if (!e.target.closest('.lang-switcher-desktop')) {
+        document.getElementById('lang-menu-desktop')?.classList.add('hidden');
+      }
+      if (!e.target.closest('.lang-switcher-mobile')) {
+        document.getElementById('lang-menu-mobile')?.classList.add('hidden');
+      }
     });
 
     // Mobile menu toggle
@@ -130,30 +274,6 @@ const translations = {
         document.getElementById('mobile-menu')?.classList.add('hidden');
       });
     });
-
-    // Parallax and scroll animations
-    let ticking = false;
-
-    function updateParallax() {
-      const scrolled = window.pageYOffset;
-
-      // Parallax effect for background elements
-      const parallaxElements = document.querySelectorAll('.float, .cyber-grid');
-      parallaxElements.forEach((el, index) => {
-        const speed = 0.1 + (index * 0.05);
-        const yPos = -(scrolled * speed);
-        el.style.transform = `translateY(${yPos}px)`;
-      });
-
-      ticking = false;
-    }
-
-    function requestParallaxUpdate() {
-      if (!ticking) {
-        window.requestAnimationFrame(updateParallax);
-        ticking = true;
-      }
-    }
 
     // Scroll reveal animations
     const observerOptions = {
@@ -191,69 +311,94 @@ const translations = {
       });
     });
 
-    // Scroll event listener for parallax
-    window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
+    // Parallax effect on scroll
+    let ticking = false;
 
-    // Add glitch effect to title on hover
-    const title = document.querySelector('h1');
-    if (title) {
-      let glitchInterval;
-      title.addEventListener('mouseenter', () => {
-        let count = 0;
-        glitchInterval = setInterval(() => {
-          title.classList.toggle('glitch');
-          count++;
-          if (count >= 6) {
-            clearInterval(glitchInterval);
-            title.classList.remove('glitch');
-          }
-        }, 100);
+    function updateParallax() {
+      const scrolled = window.pageYOffset;
+
+      // Background layers parallax
+      const layer1 = document.querySelector('.parallax-layer-1');
+      const layer2Elements = document.querySelectorAll('.parallax-layer-2');
+      const layer3Elements = document.querySelectorAll('.parallax-layer-3');
+
+      if (layer1) {
+        layer1.style.transform = `translateY(${scrolled * 0.1}px)`;
+      }
+
+      layer2Elements.forEach(el => {
+        el.style.transform = `translateY(${scrolled * 0.15}px)`;
       });
+
+      layer3Elements.forEach(el => {
+        el.style.transform = `translateY(${scrolled * 0.25}px)`;
+      });
+
+      // Section parallax containers
+      const containers = document.querySelectorAll('.parallax-container');
+      containers.forEach(container => {
+        const rect = container.getBoundingClientRect();
+        const windowHeight = window.innerHeight;
+
+        if (rect.top < windowHeight && rect.bottom > 0) {
+          const offset = (windowHeight - rect.top) * 0.05;
+          container.style.transform = `translateY(${-offset}px)`;
+        }
+      });
+
+      ticking = false;
     }
 
-    // Cursor trail effect (cyberpunk cursor)
-    let cursorTrail = [];
-    const maxTrailLength = 10;
-
-    document.addEventListener('mousemove', (e) => {
-      if (window.innerWidth > 768) { // Only on desktop
-        const trail = document.createElement('div');
-        trail.className = 'cursor-trail';
-        trail.style.cssText = `
-          position: fixed;
-          left: ${e.clientX}px;
-          top: ${e.clientY}px;
-          width: 4px;
-          height: 4px;
-          background: linear-gradient(45deg, #05d9e8, #ff2a6d);
-          border-radius: 50%;
-          pointer-events: none;
-          z-index: 9999;
-          opacity: 0.7;
-          animation: fadeOut 0.5s forwards;
-        `;
-        document.body.appendChild(trail);
-
-        cursorTrail.push(trail);
-        if (cursorTrail.length > maxTrailLength) {
-          const old = cursorTrail.shift();
-          old.remove();
-        }
-
-        setTimeout(() => trail.remove(), 500);
+    function requestParallaxUpdate() {
+      if (!ticking) {
+        window.requestAnimationFrame(updateParallax);
+        ticking = true;
       }
+    }
+
+    window.addEventListener('scroll', requestParallaxUpdate, { passive: true });
+
+    // Mouse move interaction for cards
+    const projectCards = document.querySelectorAll('.project-card');
+    projectCards.forEach(card => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = (y - centerY) / 20;
+        const rotateY = (centerX - x) / 20;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0) rotateY(0) scale(1)';
+      });
     });
 
-    // Add fadeOut animation
-    const style = document.createElement('style');
-    style.textContent = `
-      @keyframes fadeOut {
-        to {
-          opacity: 0;
-          transform: scale(0);
+    // Stagger animation for experience items
+    const experienceItems = document.querySelectorAll('.experience-item');
+    const staggerObserver = new IntersectionObserver((entries) => {
+      entries.forEach((entry, index) => {
+        if (entry.isIntersecting) {
+          setTimeout(() => {
+            entry.target.style.opacity = '1';
+            entry.target.style.transform = 'translateX(0)';
+          }, index * 100);
+          staggerObserver.unobserve(entry.target);
         }
-      }
-    `;
-    document.head.appendChild(style);
+      });
+    }, { threshold: 0.1 });
+
+    experienceItems.forEach(item => {
+      item.style.opacity = '0';
+      item.style.transform = 'translateX(-20px)';
+      item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+      staggerObserver.observe(item);
+    });
   </script>
 </Layout>

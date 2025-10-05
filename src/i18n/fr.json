@@ -1,0 +1,199 @@
+{
+  "nav": {
+    "about": "À propos",
+    "experience": "Expérience",
+    "projects": "Projets",
+    "skills": "Compétences",
+    "contact": "Contact"
+  },
+  "hero": {
+    "title": "Développeur Full-stack",
+    "subtitle": "14+ ans de développement de solutions logicielles",
+    "description": "Développeur full-stack expérimenté spécialisé en Laravel, Vue.js et technologies web modernes. Expérience en e-commerce, retail, télécommunications et DevOps.",
+    "cta": "Contactez-moi"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "text": "En tant que développeur full-stack expérimenté, j'apporte plus de 14 ans d'expérience dans le développement de solutions logicielles diverses dans les secteurs du commerce électronique, de la vente au détail et des télécommunications. Au cours des 7 dernières années, je me suis spécialisé dans Laravel Framework, en créant des applications pour utilisateurs finaux et des intégrations middleware. Mon expertise comprend Vue.js, .NET (C#), Java, Ionic Framework et les services d'IA cloud comme AWS Textract et Google Cloud Vision."
+  },
+  "experience": {
+    "title": "Expérience",
+    "current": "Présent",
+    "jobs": [
+      {
+        "company": "B Process (OADPRS)",
+        "role": "Développeur Web Full-stack",
+        "period": "Février 2024 - Présent",
+        "description": "Développement et maintenance de systèmes de gestion interne. Intégration de solutions biométriques tierces. Mise en œuvre d'outils DevOps pour les environnements QA et Dev.",
+        "stack": "Laravel, MySQL, Angular, .NET 6.0 Core"
+      },
+      {
+        "company": "We Are The Robots",
+        "role": "Développeur Web Full-stack",
+        "period": "Mai 2018 - Décembre 2023",
+        "description": "Développement de plateformes web avec Laravel et Vue.js. Développement mobile avec Ionic Framework. Activités de prévente, leadership technique et responsabilités DevOps.",
+        "stack": "Laravel, Ionic, Tailwind, MySQL, Vue.js"
+      },
+      {
+        "company": "Abugaber",
+        "role": "Développeur Web Full-stack",
+        "period": "Mars 2016 - Mars 2018",
+        "description": "Développement de framework PHP/JavaScript. Collecte des exigences et mise en œuvre de systèmes de support.",
+        "stack": "PHP, JavaScript, MySQL"
+      },
+      {
+        "company": "Nextel de Mexico",
+        "role": "Ingénieur DevOps",
+        "period": "2008-2009, 2013-2014",
+        "description": "Conception et développement d'OSS pour la surveillance de l'infrastructure. Tâches DevOps pour le dépannage des problèmes d'infrastructure.",
+        "stack": "ASP .NET, C#, Java, SQL Server, Oracle, Netcool/Ómnibus"
+      }
+    ]
+  },
+  "projects": {
+    "title": "Projets en vedette",
+    "subtitle": "Solutions industrielles dans plusieurs secteurs",
+    "featured": "En vedette",
+    "keyFeatures": "Caractéristiques clés",
+    "techStack": "Stack technique",
+    "industriesServed": "Secteurs desservis",
+    "industries": ["Hôtellerie", "Télécommunications", "Logistique", "Santé", "Commerce", "ONG", "Sécurité"],
+    "items": [
+      {
+        "title": "Systèmes de point de vente",
+        "industry": "Hôtellerie et restauration",
+        "description": "Support technique et optimisation pour l'infrastructure POS de restaurant, y compris la réconciliation des transactions, le suivi des écarts d'inventaire et les systèmes de reporting automatisés.",
+        "highlights": ["Réconciliation des transactions", "Gestion des stocks", "Reporting automatisé", "Support matériel/logiciel"],
+        "stack": "PHP, OpenCart, SQL Server"
+      },
+      {
+        "title": "Plateforme OSS pour télécommunications",
+        "industry": "Télécommunications",
+        "description": "Développement de systèmes de support opérationnel pour l'infrastructure de télécommunications, y compris la surveillance des éléments de réseau, scripts automatisés de vérification de l'état, billetterie des problèmes et démons de surveillance du service SMS.",
+        "highlights": ["Surveillance réseau", "Automatisation des contrôles", "Gestion des incidents", "Surveillance SMS"],
+        "stack": "PHP, MySQL, CodeIgniter"
+      },
+      {
+        "title": "Sécurité et suivi de flotte",
+        "industry": "Logistique et sécurité",
+        "description": "Plateforme de sécurité mobile complète pour la surveillance du transport de marchandises et du personnel. Comprend le suivi GPS en temps réel, la capture de preuves photographiques, le reporting d'itinéraires et la gestion centralisée des services.",
+        "highlights": ["Suivi GPS en temps réel", "Capture de preuves mobile", "Visualisation d'itinéraires", "Comptabilité des services"],
+        "stack": "Laravel, MySQL, Google Maps API, Ionic Framework"
+      },
+      {
+        "title": "Automatisation d'accès réseau d'entreprise",
+        "industry": "IT Santé",
+        "description": "Système automatisé de gestion d'accès WiFi invité intégrant les dossiers patients SAP avec l'infrastructure réseau Cisco ISE via messagerie HL7 pour un provisionnement et déprovisionnement transparents.",
+        "highlights": ["Intégration SAP-CISCO ISE", "Messagerie HL7", "Portail en libre-service", "Provisionnement automatisé"],
+        "stack": "Laravel, Java SE, SQL Server, API Cisco ISE, Ionic"
+      },
+      {
+        "title": "Extraction de données produit par IA",
+        "industry": "Retail et E-commerce",
+        "description": "Solution OCR intelligente utilisant AWS Textract et Google Vision AI pour automatiser l'extraction d'informations produit à partir de photos d'emballage, améliorant la qualité des données et réduisant le temps de saisie manuelle.",
+        "highlights": ["OCR par vision par ordinateur", "Machine Learning", "Amélioration de la qualité des données", "Traitement par lots"],
+        "stack": "Laravel, Livewire, MySQL, AWS Textract, Google Vision API"
+      },
+      {
+        "title": "Plateforme de gestion des dons",
+        "industry": "ONG et impact social",
+        "description": "Plateforme e-commerce open-source personnalisée pour les organisations à but non lucratif pour gérer les dons, suivre les contributions et soutenir les initiatives de bien-être social.",
+        "highlights": ["Collecte de fonds en ligne", "Suivi des contributions", "Open Source", "Impact social"],
+        "stack": "PHP, OpenCart, MySQL"
+      },
+      {
+        "title": "Gestion biométrique de population",
+        "industry": "Sécurité institutionnelle",
+        "description": "Plateforme complète d'enregistrement et de suivi biométrique avec intégration de dispositifs tiers, comprenant une architecture de microservices pour la gestion des données personnelles, la capture biométrique et la surveillance des activités.",
+        "highlights": ["Enregistrement biométrique", "Suivi de localisation", "Architecture microservices", "Intégration de dispositifs"],
+        "stack": "Laravel, MySQL, .NET Framework, Ionic, Microservices"
+      },
+      {
+        "title": "Gatolectivo.org",
+        "industry": "ONG et bien-être animal",
+        "description": "Membre fondateur et contributeur principal d'une organisation collaborative de bien-être animal. Direction de la transformation numérique en développant le premier site web et plateforme de réseau social, gestion de l'engagement communautaire sur les réseaux sociaux, et établissement de partenariats stratégiques avec des entreprises locales pour soutenir les initiatives de sauvetage d'animaux.",
+        "highlights": ["Développement site web et réseau social", "Gestion de communauté", "Partenariats d'affaires", "Relations publiques"],
+        "stack": "Développement Web, Réseaux sociaux, Construction communautaire, Coordination de bénévoles",
+        "special": true
+      }
+    ]
+  },
+  "consulting": {
+    "title": "Conseil en logiciel et services professionnels",
+    "subtitle": "Expertise complète en développement logiciel",
+    "description": "Consultant en logiciels d'entreprise et freelance avec une expérience complète dans toutes les phases du cycle de vie du développement logiciel. Spécialisé dans le rapprochement des exigences techniques et commerciales pour fournir des solutions robustes et évolutives.",
+    "badge": "Services professionnels",
+    "cta": {
+      "title": "Prêt à donner vie à votre projet ?",
+      "description": "Discutons de la façon dont je peux vous aider à transformer vos défis techniques en solutions innovantes.",
+      "button": "Me contacter"
+    },
+    "services": [
+      {
+        "title": "Ingénierie de prévente",
+        "description": "Conception de solutions techniques, développement de preuves de concept et analyse des exigences clients"
+      },
+      {
+        "title": "Développement Full-Stack",
+        "description": "Développement d'applications personnalisées du concept au déploiement, sur site et dans le cloud"
+      },
+      {
+        "title": "Collecte des exigences",
+        "description": "Entretiens avec les parties prenantes, analyse commerciale et documentation des spécifications techniques"
+      },
+      {
+        "title": "Service desk et support",
+        "description": "Résolution de tickets de problèmes, maintenance du système et optimisation des performances"
+      },
+      {
+        "title": "Modernisation de systèmes legacy",
+        "description": "Maintenance et amélioration des systèmes logiciels existants avec des technologies modernes"
+      },
+      {
+        "title": "Développement de POC",
+        "description": "Prototypage rapide et mise en œuvre de preuves de concept pour validation"
+      }
+    ]
+  },
+  "skills": {
+    "title": "Compétences et technologies",
+    "categories": {
+      "languages": {
+        "title": "Langages",
+        "advanced": "Avancé",
+        "intermediate": "Intermédiaire",
+        "items": {
+          "advanced": ["HTML/CSS", "JavaScript", "SQL", "PHP"],
+          "intermediate": ["Node.js", "Angular", "Java", "C#"]
+        }
+      },
+      "frameworks": {
+        "title": "Frameworks et outils",
+        "advanced": "Avancé",
+        "intermediate": "Intermédiaire",
+        "items": {
+          "advanced": ["Laravel", "CodeIgniter"],
+          "intermediate": ["Vue.js", "Tailwind CSS", "Ionic"]
+        }
+      },
+      "other": {
+        "title": "Autres",
+        "items": ["Scrum", "VS Code", "Linux", "MySQL", "Oracle", "AWS Textract", "Google Cloud Vision", "API Cisco ISE"]
+      }
+    }
+  },
+  "contact": {
+    "title": "Travaillons ensemble",
+    "subtitle": "Disponible pour des projets freelance et des opportunités à temps plein",
+    "location": "Mexico City, Mexique (UTC-6)",
+    "buttons": {
+      "whatsapp": "WhatsApp",
+      "email": "Email",
+      "linkedin": "LinkedIn"
+    }
+  },
+  "footer": {
+    "rights": "Tous droits réservés",
+    "made": "Créé avec Astro et Tailwind CSS"
+  }
+}

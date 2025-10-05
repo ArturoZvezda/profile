@@ -53,6 +53,11 @@
   "projects": {
     "title": "Featured Projects",
     "subtitle": "Industry Solutions Across Multiple Sectors",
+    "featured": "Featured",
+    "keyFeatures": "Key Features",
+    "techStack": "Tech Stack",
+    "industriesServed": "Industries Served",
+    "industries": ["Hospitality", "Telecom", "Logistics", "Healthcare", "Retail", "Non-Profit", "Security"],
     "items": [
       {
         "title": "Point of Sale Systems",
@@ -102,6 +107,51 @@
         "description": "Comprehensive biometric registration and tracking platform with third-party device integration, featuring microservices architecture for personal data management, biometric capture, and activity monitoring.",
         "highlights": ["Biometric Registration", "Location Tracking", "Microservices Architecture", "Device Integration"],
         "stack": "Laravel, MySQL, .NET Framework, Ionic, Microservices"
+      },
+      {
+        "title": "Gatolectivo.org",
+        "industry": "Non-Profit & Animal Welfare",
+        "description": "Founding member and core contributor to a collaborative animal welfare organization. Led the digital transformation by developing the first website and social network platform, managing community engagement across social media channels, and building strategic partnerships with local businesses to support animal rescue initiatives.",
+        "highlights": ["Website & Social Network Development", "Community Management", "Business Partnerships", "Public Relations"],
+        "stack": "Web Development, Social Media, Community Building, Volunteer Coordination",
+        "special": true
+      }
+    ]
+  },
+  "consulting": {
+    "title": "Software Consulting & Professional Services",
+    "subtitle": "End-to-End Software Development Expertise",
+    "description": "Corporate and freelance software consultant with comprehensive experience across all phases of the software development lifecycle. Specialized in bridging technical and business requirements to deliver robust, scalable solutions.",
+    "badge": "Professional Services",
+    "cta": {
+      "title": "Ready to bring your project to life?",
+      "description": "Let's discuss how I can help transform your technical challenges into innovative solutions.",
+      "button": "Get in Touch"
+    },
+    "services": [
+      {
+        "title": "Presale Engineering",
+        "description": "Technical solution design, proof of concept development, and client requirement analysis"
+      },
+      {
+        "title": "Full-Stack Development",
+        "description": "Custom application development from concept to deployment, both on-premise and cloud-based"
+      },
+      {
+        "title": "Requirements Gathering",
+        "description": "Stakeholder interviews, business analysis, and technical specification documentation"
+      },
+      {
+        "title": "Service Desk & Support",
+        "description": "Trouble ticket resolution, system maintenance, and performance optimization"
+      },
+      {
+        "title": "Legacy Modernization",
+        "description": "Maintaining and improving existing software systems with modern technologies"
+      },
+      {
+        "title": "POC Development",
+        "description": "Rapid prototyping and proof of concept implementation for validation"
       }
     ]
   },
@@ -119,6 +169,8 @@
       },
       "frameworks": {
         "title": "Frameworks & Tools",
+        "advanced": "Advanced",
+        "intermediate": "Intermediate",
         "items": {
           "advanced": ["Laravel", "CodeIgniter"],
           "intermediate": ["Vue.js", "Tailwind CSS", "Ionic"]

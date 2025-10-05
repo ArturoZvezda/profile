@@ -1,69 +1,15 @@
 ---
 ---
 
-<div class="cyber-background fixed inset-0 -z-10 overflow-hidden">
-  <!-- Animated Grid -->
-  <div class="cyber-grid absolute inset-0 opacity-30"></div>
+<div class="dark-background fixed inset-0 -z-10 overflow-hidden">
+  <!-- Subtle gradient overlay -->
+  <div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#0f0f0f] to-[#0a0a0a]"></div>
 
-  <!-- Floating Particles -->
-  <div class="particles absolute inset-0">
-    {Array.from({ length: 20 }).map((_, i) => (
-      <div
-        class="particle absolute w-1 h-1 bg-cyan-400 rounded-full"
-        style={`
-          left: ${Math.random() * 100}%;
-          top: ${Math.random() * 100}%;
-          animation: float ${3 + Math.random() * 4}s ease-in-out infinite;
-          animation-delay: ${Math.random() * 2}s;
-          opacity: ${0.3 + Math.random() * 0.7};
-        `}
-      />
-    ))}
-  </div>
+  <!-- Minimal grid with parallax -->
+  <div class="parallax-layer-1 absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px); background-size: 100px 100px;"></div>
 
-  <!-- Neon Lines -->
-  <svg class="absolute inset-0 w-full h-full opacity-20" xmlns="http://www.w3.org/2000/svg">
-    <defs>
-      <linearGradient id="neonGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-        <stop offset="0%" style="stop-color:#05d9e8;stop-opacity:1" />
-        <stop offset="100%" style="stop-color:#ff2a6d;stop-opacity:1" />
-      </linearGradient>
-    </defs>
-    <line x1="0" y1="20%" x2="100%" y2="20%" stroke="url(#neonGradient)" stroke-width="2" opacity="0.3">
-      <animate attributeName="y1" values="20%;25%;20%" dur="4s" repeatCount="indefinite" />
-      <animate attributeName="y2" values="20%;25%;20%" dur="4s" repeatCount="indefinite" />
-    </line>
-    <line x1="0" y1="50%" x2="100%" y2="50%" stroke="url(#neonGradient)" stroke-width="2" opacity="0.3">
-      <animate attributeName="y1" values="50%;55%;50%" dur="6s" repeatCount="indefinite" />
-      <animate attributeName="y2" values="50%;55%;50%" dur="6s" repeatCount="indefinite" />
-    </line>
-    <line x1="0" y1="80%" x2="100%" y2="80%" stroke="url(#neonGradient)" stroke-width="2" opacity="0.3">
-      <animate attributeName="y1" values="80%;75%;80%" dur="5s" repeatCount="indefinite" />
-      <animate attributeName="y2" values="80%;75%;80%" dur="5s" repeatCount="indefinite" />
-    </line>
-  </svg>
-
-  <!-- Corner Accents -->
-  <div class="absolute top-0 left-0 w-32 h-32 border-l-2 border-t-2 border-cyan-400 opacity-50"></div>
-  <div class="absolute top-0 right-0 w-32 h-32 border-r-2 border-t-2 border-pink-500 opacity-50"></div>
-  <div class="absolute bottom-0 left-0 w-32 h-32 border-l-2 border-b-2 border-pink-500 opacity-50"></div>
-  <div class="absolute bottom-0 right-0 w-32 h-32 border-r-2 border-b-2 border-cyan-400 opacity-50"></div>
+  <!-- Floating decorative elements -->
+  <div class="parallax-layer-2 absolute top-20 right-20 w-32 h-32 border border-[#1a1a1a] opacity-50 subtle-float"></div>
+  <div class="parallax-layer-2 absolute bottom-40 left-10 w-24 h-24 border border-[#1a1a1a] opacity-30 subtle-float" style="animation-delay: 2s;"></div>
+  <div class="parallax-layer-3 absolute top-1/2 left-1/4 w-16 h-16 border border-[#1a1a1a] opacity-20 subtle-float" style="animation-delay: 4s;"></div>
 </div>
-
-<style>
-  .cyber-background {
-    background: linear-gradient(135deg, #01012b 0%, #05050f 50%, #0a0a1e 100%);
-  }
-
-  @keyframes float {
-    0%, 100% {
-      transform: translateY(0) translateX(0);
-    }
-    33% {
-      transform: translateY(-20px) translateX(10px);
-    }
-    66% {
-      transform: translateY(-10px) translateX(-10px);
-    }
-  }
-</style>
