@@ -2,46 +2,72 @@
 const { t } = Astro.props;
 ---
 
-<section id="experience" class="relative py-12 sm:py-20 overflow-hidden">
-  <div class="absolute inset-0 cyber-grid opacity-10"></div>
-  <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-pink-500 to-transparent"></div>
+<section id="experience" class="relative py-20 sm:py-32 overflow-hidden">
+  <div class="container mx-auto px-4 sm:px-6">
+    <!-- Section header -->
+    <div class="flex items-center gap-4 mb-12">
+      <div class="w-2 h-16 bg-gradient-to-b from-cyan-500 via-magenta-500 to-blue-600 rounded-full"></div>
+      <div>
+        <p class="text-sm font-mono text-cyan-400/80 tracking-wider mb-1">{t.decorative.workHistory}</p>
+        <h2 class="text-4xl sm:text-5xl font-bold text-white">
+          {t.experience.title}
+        </h2>
+      </div>
+    </div>
 
-  <div class="container mx-auto px-4 sm:px-6 relative z-10">
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-center mb-8 sm:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-pink-500 to-cyan-400" style="font-family: 'Orbitron', sans-serif;">
-      [ {t.experience.title} ]
-    </h2>
-    <div class="max-w-5xl mx-auto">
-      <div class="space-y-6 sm:space-y-8">
+    <div class="max-w-4xl relative">
+      <!-- Timeline line -->
+      <div class="absolute left-0 top-0 bottom-0 w-0.5 bg-gradient-to-b from-cyan-500 via-magenta-500 to-blue-600 opacity-30"></div>
+
+      <div class="space-y-8">
         {t.experience.jobs.map((job: any, index: number) => (
-          <div class="group relative bg-[#0a0a1e]/60 p-5 sm:p-6 rounded-lg border-2 border-cyan-400/30 hover:border-pink-500/60 transition-all duration-300 backdrop-blur-sm transform hover:scale-[1.02] hover:shadow-lg hover:shadow-cyan-500/20">
-            <!-- Glowing corner -->
-            <div class="absolute -top-1 -left-1 w-4 h-4 bg-cyan-400 blur-sm opacity-60 group-hover:opacity-100 transition-opacity"></div>
-            <div class="absolute -bottom-1 -right-1 w-4 h-4 bg-pink-500 blur-sm opacity-60 group-hover:opacity-100 transition-opacity"></div>
+          <div class="experience-item group relative pl-12 glass-card p-6 sm:p-8 rounded-lg ml-6
+                      hover:border-cyan-400/50 transition-all duration-500 magnetic card-3d">
+            <!-- Timeline dot -->
+            <div class="absolute left-[-30px] top-8 w-4 h-4 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600
+                        shadow-[0_0_20px_rgba(0,255,255,0.5)] group-hover:shadow-[0_0_30px_rgba(0,255,255,0.8)]
+                        transition-shadow duration-300 border-4 border-black z-10"></div>
 
-            <div class="flex flex-col md:flex-row md:justify-between md:items-start mb-3">
-              <div class="flex-1">
-                <h3 class="text-lg sm:text-xl font-bold text-cyan-400 leading-tight group-hover:text-pink-500 transition-colors" style="font-family: 'Orbitron', sans-serif;">
-                  &gt;&gt; {job.company}
-                </h3>
-                <h4 class="text-base sm:text-lg text-gray-300 mt-1 font-medium">{job.role}</h4>
+            <!-- Connecting line -->
+            <div class="absolute left-[-26px] top-8 w-8 h-0.5 bg-gradient-to-r from-cyan-500/50 to-transparent"></div>
+
+            <div class="card-3d-inner">
+              <!-- Company and role -->
+              <div class="flex flex-wrap items-start justify-between gap-4 mb-4">
+                <div class="flex-1">
+                  <h3 class="text-2xl font-bold text-white group-hover:text-cyan-400 transition-colors mb-2">
+                    {job.company}
+                  </h3>
+                  <h4 class="text-lg text-gray-400 font-medium">{job.role}</h4>
+                </div>
+                <div class="px-4 py-2 glass-card rounded-full border border-cyan-500/30">
+                  <span class="text-sm text-cyan-400 font-mono">
+                    {job.period}
+                  </span>
+                </div>
               </div>
-              <span class="text-pink-500 text-xs sm:text-sm mt-2 md:mt-0 md:ml-4 flex-shrink-0 font-mono bg-pink-500/10 px-3 py-1 rounded">
-                {job.period}
-              </span>
-            </div>
-            <p class="text-sm sm:text-base text-gray-400 mb-4 leading-relaxed">{job.description}</p>
-            <div class="flex flex-wrap gap-2">
-              {job.stack.split(', ').map((tech: string) => (
-                <span class="px-3 py-1 bg-[#01012b] border border-cyan-400/50 text-cyan-400 rounded text-xs sm:text-sm font-semibold hover:border-pink-500 hover:text-pink-500 transition-all duration-200 cursor-default">
-                  {tech}
-                </span>
-              ))}
+
+              <!-- Description -->
+              <p class="text-base text-gray-300 mb-6 leading-relaxed">{job.description}</p>
+
+              <!-- Tech stack -->
+              <div>
+                <h5 class="text-xs font-mono text-cyan-400/80 uppercase tracking-wider mb-3">{t.decorative.technologiesUsed}</h5>
+                <div class="flex flex-wrap gap-2">
+                  {job.stack.split(', ').map((tech: string) => (
+                    <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-400 text-xs rounded
+                                 hover:bg-cyan-500/10 hover:border-cyan-500/30 hover:text-cyan-400
+                                 transition-all duration-300">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </div>
 
-            <!-- Index number -->
-            <div class="absolute top-3 right-3 text-6xl font-black text-cyan-400/5 group-hover:text-pink-500/10 transition-colors" style="font-family: 'Orbitron', sans-serif;">
-              {(index + 1).toString().padStart(2, '0')}
-            </div>
+            <!-- Hover glow -->
+            <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/0 via-cyan-500/0 to-cyan-500/5
+                        opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none rounded-lg"></div>
           </div>
         ))}
       </div>

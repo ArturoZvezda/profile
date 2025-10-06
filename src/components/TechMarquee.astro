@@ -1,0 +1,93 @@
+---
+// Comprehensive tech stack organized by category
+const techStack = [
+  // Languages & Core
+  { name: "PHP", category: "language" },
+  { name: "JavaScript", category: "language" },
+  { name: "TypeScript", category: "language" },
+  { name: "SQL", category: "language" },
+  { name: "Node.js", category: "runtime" },
+  { name: "C#", category: "language" },
+  { name: "Java", category: "language" },
+
+  // Frameworks
+  { name: "Laravel", category: "framework" },
+  { name: "Vue.js", category: "framework" },
+  { name: "React", category: "framework" },
+  { name: "Angular", category: "framework" },
+  { name: "Astro", category: "framework" },
+  { name: ".NET Core", category: "framework" },
+  { name: "Ionic", category: "framework" },
+  { name: "Tailwind CSS", category: "framework" },
+  { name: "CodeIgniter", category: "framework" },
+
+  // DevOps & Cloud
+  { name: "Docker", category: "devops" },
+  { name: "Ansible", category: "devops" },
+  { name: "AWS", category: "cloud" },
+  { name: "Google Cloud", category: "cloud" },
+  { name: "CI/CD", category: "devops" },
+  { name: "Git", category: "tool" },
+  { name: "Linux", category: "os" },
+
+  // Databases
+  { name: "MySQL", category: "database" },
+  { name: "PostgreSQL", category: "database" },
+  { name: "SQL Server", category: "database" },
+  { name: "Oracle", category: "database" },
+  { name: "MongoDB", category: "database" },
+
+  // Tools & Services
+  { name: "REST APIs", category: "api" },
+  { name: "GraphQL", category: "api" },
+  { name: "Microservices", category: "architecture" },
+  { name: "Scrum", category: "methodology" },
+  { name: "Agile", category: "methodology" },
+];
+
+// Duplicate for seamless loop
+const duplicatedStack = [...techStack, ...techStack];
+---
+
+<div class="tech-marquee-wrapper relative py-8 overflow-hidden border-y border-white/5 bg-gradient-to-r from-[#0a0a0a] via-[#0f0f0f] to-[#0a0a0a]">
+  <!-- Gradient overlays for fade effect -->
+  <div class="absolute left-0 top-0 bottom-0 w-32 bg-gradient-to-r from-[#0a0a0a] to-transparent z-10 pointer-events-none"></div>
+  <div class="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-[#0a0a0a] to-transparent z-10 pointer-events-none"></div>
+
+  <!-- Marquee container -->
+  <div class="tech-marquee flex gap-8 animate-marquee">
+    {duplicatedStack.map((tech) => (
+      <div class="tech-item flex-shrink-0 group">
+        <div class="px-4 py-2 bg-[#141414] border border-[#2a2a2a] hover:border-white/20 transition-all duration-300">
+          <span class="text-sm text-gray-500 group-hover:text-white transition-colors duration-300 whitespace-nowrap font-medium">
+            {tech.name}
+          </span>
+        </div>
+      </div>
+    ))}
+  </div>
+</div>
+
+<style>
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
+  .animate-marquee {
+    animation: marquee 60s linear infinite;
+  }
+
+  .tech-marquee-wrapper:hover .animate-marquee {
+    animation-play-state: paused;
+  }
+
+  /* Smooth rendering */
+  .tech-marquee {
+    will-change: transform;
+  }
+</style>

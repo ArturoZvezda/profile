@@ -2,85 +2,156 @@
 const { t } = Astro.props;
 ---
 
-<section id="skills" class="relative py-12 sm:py-20 overflow-hidden">
-  <div class="absolute inset-0 bg-gradient-to-b from-[#0a0a1e] via-[#01012b] to-[#0a0a1e] opacity-50"></div>
-  <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-cyan-400 to-transparent"></div>
+<section id="skills" class="relative py-20 sm:py-32 overflow-hidden">
+  <div class="container mx-auto px-4 sm:px-6">
+    <!-- Section header -->
+    <div class="flex items-center gap-4 mb-12">
+      <div class="w-2 h-16 bg-gradient-to-b from-blue-500 to-magenta-600 rounded-full"></div>
+      <div>
+        <p class="text-sm font-mono text-blue-400/80 tracking-wider mb-1">TECH_SKILLS://</p>
+        <h2 class="text-4xl sm:text-5xl font-bold text-white">
+          {t.skills.title}
+        </h2>
+      </div>
+    </div>
 
-  <div class="container mx-auto px-4 sm:px-6 relative z-10">
-    <h2 class="text-3xl sm:text-4xl md:text-5xl font-black text-center mb-8 sm:mb-12 text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-pink-500 to-cyan-400" style="font-family: 'Orbitron', sans-serif;">
-      [ {t.skills.title} ]
-    </h2>
-    <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
+    <div class="max-w-6xl grid grid-cols-1 md:grid-cols-3 gap-6">
 
       <!-- Languages -->
-      <div class="group relative bg-[#0a0a1e]/80 p-5 sm:p-6 rounded-lg border-2 border-cyan-400/40 hover:border-cyan-400 transition-all duration-300 backdrop-blur-sm">
-        <div class="absolute top-2 left-2 w-3 h-3 bg-cyan-400 rounded-full pulse-glow"></div>
-        <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-cyan-400" style="font-family: 'Orbitron', sans-serif;">
-          &lt; {t.skills.categories.languages.title} /&gt;
-        </h3>
-        <div class="mb-4">
-          <h4 class="font-semibold mb-2 text-xs sm:text-sm text-pink-500 uppercase tracking-wider">{t.skills.categories.languages.advanced}</h4>
-          <div class="flex flex-wrap gap-2">
-            {t.skills.categories.languages.items.advanced.map((skill: string) => (
-              <span class="px-3 py-1.5 bg-gradient-to-r from-cyan-500 to-cyan-600 text-black rounded font-bold text-xs sm:text-sm transform hover:scale-105 transition-transform cursor-default">
-                {skill}
-              </span>
-            ))}
+      <div class="skill-card group glass-card card-3d magnetic p-6 sm:p-8 rounded-lg
+                  hover:border-cyan-400/50 transition-all duration-500 relative overflow-hidden">
+        <div class="card-3d-inner">
+          <!-- Icon -->
+          <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border border-cyan-500/30
+                      flex items-center justify-center mb-4 group-hover:shadow-[0_0_20px_rgba(0,255,255,0.3)]
+                      transition-shadow duration-300">
+            <svg class="w-6 h-6 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+            </svg>
+          </div>
+
+          <h3 class="text-xl font-bold mb-6 text-white group-hover:text-cyan-400 transition-colors">
+            {t.skills.categories.languages.title}
+          </h3>
+
+          <div class="mb-6">
+            <h4 class="font-mono mb-3 text-xs text-cyan-400/80 uppercase tracking-wider">
+              {t.skills.categories.languages.advanced}
+            </h4>
+            <div class="flex flex-wrap gap-2">
+              {t.skills.categories.languages.items.advanced.map((skill: string) => (
+                <span class="px-3 py-1.5 bg-gradient-to-r from-cyan-500 to-blue-600 text-white text-xs font-semibold
+                             rounded shadow-[0_0_10px_rgba(0,255,255,0.3)]">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-mono mb-3 text-xs text-gray-500 uppercase tracking-wider">
+              {t.skills.categories.languages.intermediate}
+            </h4>
+            <div class="flex flex-wrap gap-2">
+              {t.skills.categories.languages.items.intermediate.map((skill: string) => (
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-400 text-xs
+                             hover:bg-cyan-500/10 hover:border-cyan-500/30 hover:text-cyan-400
+                             transition-all duration-300 rounded">
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
-        <div>
-          <h4 class="font-semibold mb-2 text-xs sm:text-sm text-pink-500 uppercase tracking-wider">{t.skills.categories.languages.intermediate}</h4>
-          <div class="flex flex-wrap gap-2">
-            {t.skills.categories.languages.items.intermediate.map((skill: string) => (
-              <span class="px-3 py-1.5 bg-[#01012b] border border-cyan-400/50 text-cyan-300 rounded font-semibold text-xs sm:text-sm hover:border-cyan-400 hover:text-cyan-400 transition-all cursor-default">
-                {skill}
-              </span>
-            ))}
-          </div>
-        </div>
+
+        <!-- Gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-cyan-500/0 via-cyan-500/0 to-cyan-500/5
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
       </div>
 
       <!-- Frameworks -->
-      <div class="group relative bg-[#0a0a1e]/80 p-5 sm:p-6 rounded-lg border-2 border-pink-500/40 hover:border-pink-500 transition-all duration-300 backdrop-blur-sm">
-        <div class="absolute top-2 left-2 w-3 h-3 bg-pink-500 rounded-full pulse-glow"></div>
-        <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-pink-500" style="font-family: 'Orbitron', sans-serif;">
-          &lt; {t.skills.categories.frameworks.title} /&gt;
-        </h3>
-        <div class="mb-4">
-          <h4 class="font-semibold mb-2 text-xs sm:text-sm text-cyan-400 uppercase tracking-wider">{t.skills.categories.languages.advanced}</h4>
-          <div class="flex flex-wrap gap-2">
-            {t.skills.categories.frameworks.items.advanced.map((skill: string) => (
-              <span class="px-3 py-1.5 bg-gradient-to-r from-pink-500 to-pink-600 text-black rounded font-bold text-xs sm:text-sm transform hover:scale-105 transition-transform cursor-default">
-                {skill}
-              </span>
-            ))}
+      <div class="skill-card group glass-card card-3d magnetic p-6 sm:p-8 rounded-lg
+                  hover:border-magenta-400/50 transition-all duration-500 relative overflow-hidden">
+        <div class="card-3d-inner">
+          <!-- Icon -->
+          <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-magenta-500/20 to-blue-600/20 border border-magenta-500/30
+                      flex items-center justify-center mb-4 group-hover:shadow-[0_0_20px_rgba(255,0,255,0.3)]
+                      transition-shadow duration-300">
+            <svg class="w-6 h-6 text-magenta-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z"></path>
+            </svg>
+          </div>
+
+          <h3 class="text-xl font-bold mb-6 text-white group-hover:text-magenta-400 transition-colors">
+            {t.skills.categories.frameworks.title}
+          </h3>
+
+          <div class="mb-6">
+            <h4 class="font-mono mb-3 text-xs text-magenta-400/80 uppercase tracking-wider">
+              {t.skills.categories.frameworks.advanced || t.skills.categories.languages.advanced}
+            </h4>
+            <div class="flex flex-wrap gap-2">
+              {t.skills.categories.frameworks.items.advanced.map((skill: string) => (
+                <span class="px-3 py-1.5 bg-gradient-to-r from-magenta-500 to-blue-600 text-white text-xs font-semibold
+                             rounded shadow-[0_0_10px_rgba(255,0,255,0.3)]">
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h4 class="font-mono mb-3 text-xs text-gray-500 uppercase tracking-wider">
+              {t.skills.categories.frameworks.intermediate || t.skills.categories.languages.intermediate}
+            </h4>
+            <div class="flex flex-wrap gap-2">
+              {t.skills.categories.frameworks.items.intermediate.map((skill: string) => (
+                <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-400 text-xs
+                             hover:bg-magenta-500/10 hover:border-magenta-500/30 hover:text-magenta-400
+                             transition-all duration-300 rounded">
+                  {skill}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
-        <div>
-          <h4 class="font-semibold mb-2 text-xs sm:text-sm text-cyan-400 uppercase tracking-wider">{t.skills.categories.languages.intermediate}</h4>
-          <div class="flex flex-wrap gap-2">
-            {t.skills.categories.frameworks.items.intermediate.map((skill: string) => (
-              <span class="px-3 py-1.5 bg-[#01012b] border border-pink-500/50 text-pink-300 rounded font-semibold text-xs sm:text-sm hover:border-pink-500 hover:text-pink-500 transition-all cursor-default">
-                {skill}
-              </span>
-            ))}
-          </div>
-        </div>
+
+        <!-- Gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-magenta-500/0 via-magenta-500/0 to-magenta-500/5
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
       </div>
 
       <!-- Other Tools -->
-      <div class="group relative bg-[#0a0a1e]/80 p-5 sm:p-6 rounded-lg border-2 border-purple-500/40 hover:border-purple-400 transition-all duration-300 backdrop-blur-sm md:col-span-1">
-        <div class="absolute top-2 left-2 w-3 h-3 bg-purple-400 rounded-full pulse-glow"></div>
-        <h3 class="text-lg sm:text-xl font-bold mb-3 sm:mb-4 text-purple-400" style="font-family: 'Orbitron', sans-serif;">
-          &lt; {t.skills.categories.other.title} /&gt;
-        </h3>
-        <div class="flex flex-wrap gap-2">
-          {t.skills.categories.other.items.map((skill: string) => (
-            <span class="px-3 py-1.5 bg-gradient-to-r from-purple-500/20 to-purple-600/20 border border-purple-400/50 text-purple-300 rounded font-semibold text-xs sm:text-sm hover:border-purple-400 hover:text-purple-400 hover:bg-purple-500/30 transition-all cursor-default">
-              {skill}
-            </span>
-          ))}
+      <div class="skill-card group glass-card card-3d magnetic p-6 sm:p-8 rounded-lg
+                  hover:border-blue-400/50 transition-all duration-500 relative overflow-hidden">
+        <div class="card-3d-inner">
+          <!-- Icon -->
+          <div class="w-12 h-12 rounded-lg bg-gradient-to-br from-blue-500/20 to-cyan-600/20 border border-blue-500/30
+                      flex items-center justify-center mb-4 group-hover:shadow-[0_0_20px_rgba(0,128,255,0.3)]
+                      transition-shadow duration-300">
+            <svg class="w-6 h-6 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+            </svg>
+          </div>
+
+          <h3 class="text-xl font-bold mb-6 text-white group-hover:text-blue-400 transition-colors">
+            {t.skills.categories.other.title}
+          </h3>
+
+          <div class="flex flex-wrap gap-2">
+            {t.skills.categories.other.items.map((skill: string) => (
+              <span class="px-3 py-1.5 bg-white/5 border border-white/10 text-gray-400 text-xs
+                           hover:bg-blue-500/10 hover:border-blue-500/30 hover:text-blue-400
+                           transition-all duration-300 rounded">
+                {skill}
+              </span>
+            ))}
+          </div>
         </div>
+
+        <!-- Gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-blue-500/0 via-blue-500/0 to-blue-500/5
+                    opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"></div>
       </div>
 
     </div>
