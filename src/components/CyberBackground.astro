@@ -1,15 +1,175 @@
 ---
 ---
 
+<!-- Scanline Effect -->
+<div class="scanline"></div>
+
+<!-- Advanced High-Tech Background -->
 <div class="dark-background fixed inset-0 -z-10 overflow-hidden">
-  <!-- Subtle gradient overlay -->
-  <div class="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-[#0f0f0f] to-[#0a0a0a]"></div>
+  <!-- Base gradient -->
+  <div class="absolute inset-0 bg-gradient-to-br from-black via-[#000510] to-black"></div>
 
-  <!-- Minimal grid with parallax -->
-  <div class="parallax-layer-1 absolute inset-0 opacity-[0.03]" style="background-image: linear-gradient(#ffffff 1px, transparent 1px), linear-gradient(90deg, #ffffff 1px, transparent 1px); background-size: 100px 100px;"></div>
+  <!-- Animated tech grid -->
+  <div class="tech-grid absolute inset-0 opacity-30"></div>
 
-  <!-- Floating decorative elements -->
-  <div class="parallax-layer-2 absolute top-20 right-20 w-32 h-32 border border-[#1a1a1a] opacity-50 subtle-float"></div>
-  <div class="parallax-layer-2 absolute bottom-40 left-10 w-24 h-24 border border-[#1a1a1a] opacity-30 subtle-float" style="animation-delay: 2s;"></div>
-  <div class="parallax-layer-3 absolute top-1/2 left-1/4 w-16 h-16 border border-[#1a1a1a] opacity-20 subtle-float" style="animation-delay: 4s;"></div>
+  <!-- Particle Canvas -->
+  <canvas id="particle-canvas" class="absolute inset-0 w-full h-full"></canvas>
+
+  <!-- Floating holographic elements -->
+  <div class="parallax-layer-1 absolute top-20 right-20 w-64 h-64 border border-cyan-500/20 rounded-lg subtle-float opacity-30
+              shadow-[0_0_30px_rgba(0,255,255,0.2)]"></div>
+  <div class="parallax-layer-2 absolute bottom-40 left-10 w-48 h-48 border border-magenta-500/20 rounded-lg subtle-float opacity-20
+              shadow-[0_0_30px_rgba(255,0,255,0.2)]" style="animation-delay: 2s;"></div>
+  <div class="parallax-layer-3 absolute top-1/2 right-1/3 w-32 h-32 border border-blue-500/20 rounded-lg subtle-float opacity-25
+              shadow-[0_0_30px_rgba(0,128,255,0.2)]" style="animation-delay: 4s;"></div>
+  <div class="parallax-layer-1 absolute bottom-1/4 right-1/4 w-40 h-40 border border-cyan-400/15 rounded-full subtle-float opacity-20" style="animation-delay: 1s;"></div>
+
+  <!-- Ambient glow spots -->
+  <div class="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pulse-slow"></div>
+  <div class="absolute bottom-0 right-1/4 w-96 h-96 bg-magenta-500/10 rounded-full blur-3xl pulse-slow" style="animation-delay: 2s;"></div>
+  <div class="absolute top-1/2 left-1/2 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl pulse-slow" style="animation-delay: 4s;"></div>
 </div>
+
+<script>
+  // Advanced Particle System
+  const canvas = document.getElementById('particle-canvas') as HTMLCanvasElement;
+  const ctx = canvas.getContext('2d')!;
+
+  let particles: Particle[] = [];
+  let mouse = { x: 0, y: 0 };
+  let animationId: number;
+
+  class Particle {
+    x: number;
+    y: number;
+    size: number;
+    speedX: number;
+    speedY: number;
+    opacity: number;
+    color: string;
+    connections: Particle[] = [];
+
+    constructor() {
+      this.x = Math.random() * canvas.width;
+      this.y = Math.random() * canvas.height;
+      this.size = Math.random() * 2 + 0.5;
+      this.speedX = (Math.random() - 0.5) * 0.5;
+      this.speedY = (Math.random() - 0.5) * 0.5;
+      this.opacity = Math.random() * 0.5 + 0.2;
+
+      const colors = ['#00ffff', '#ff00ff', '#0080ff'];
+      this.color = colors[Math.floor(Math.random() * colors.length)];
+    }
+
+    update() {
+      this.x += this.speedX;
+      this.y += this.speedY;
+
+      // Boundary check
+      if (this.x < 0 || this.x > canvas.width) this.speedX *= -1;
+      if (this.y < 0 || this.y > canvas.height) this.speedY *= -1;
+
+      // Mouse interaction
+      const dx = mouse.x - this.x;
+      const dy = mouse.y - this.y;
+      const distance = Math.sqrt(dx * dx + dy * dy);
+
+      if (distance < 100) {
+        const force = (100 - distance) / 100;
+        this.x -= (dx / distance) * force * 2;
+        this.y -= (dy / distance) * force * 2;
+      }
+    }
+
+    draw() {
+      ctx.fillStyle = this.color;
+      ctx.globalAlpha = this.opacity;
+      ctx.beginPath();
+      ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+      ctx.fill();
+
+      // Draw glow
+      ctx.shadowBlur = 10;
+      ctx.shadowColor = this.color;
+      ctx.fill();
+      ctx.shadowBlur = 0;
+      ctx.globalAlpha = 1;
+    }
+
+    connect(particles: Particle[]) {
+      this.connections = [];
+      for (let particle of particles) {
+        const dx = this.x - particle.x;
+        const dy = this.y - particle.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+
+        if (distance < 150 && particle !== this) {
+          this.connections.push(particle);
+        }
+      }
+    }
+
+    drawConnections() {
+      for (let particle of this.connections) {
+        const dx = this.x - particle.x;
+        const dy = this.y - particle.y;
+        const distance = Math.sqrt(dx * dx + dy * dy);
+        const opacity = (1 - distance / 150) * 0.15;
+
+        ctx.strokeStyle = this.color;
+        ctx.globalAlpha = opacity;
+        ctx.lineWidth = 0.5;
+        ctx.beginPath();
+        ctx.moveTo(this.x, this.y);
+        ctx.lineTo(particle.x, particle.y);
+        ctx.stroke();
+        ctx.globalAlpha = 1;
+      }
+    }
+  }
+
+  function init() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    particles = [];
+
+    const particleCount = Math.min(Math.floor((canvas.width * canvas.height) / 15000), 100);
+    for (let i = 0; i < particleCount; i++) {
+      particles.push(new Particle());
+    }
+  }
+
+  function animate() {
+    ctx.fillStyle = 'rgba(0, 0, 0, 0.05)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    for (let particle of particles) {
+      particle.connect(particles);
+      particle.update();
+      particle.drawConnections();
+      particle.draw();
+    }
+
+    animationId = requestAnimationFrame(animate);
+  }
+
+  // Mouse tracking
+  window.addEventListener('mousemove', (e) => {
+    mouse.x = e.clientX;
+    mouse.y = e.clientY;
+  });
+
+  // Resize handler
+  window.addEventListener('resize', () => {
+    init();
+  });
+
+  // Initialize and start animation
+  init();
+  animate();
+
+  // Cleanup on navigation
+  document.addEventListener('astro:before-preparation', () => {
+    cancelAnimationFrame(animationId);
+  });
+</script>

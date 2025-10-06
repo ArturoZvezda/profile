@@ -6,6 +6,16 @@
     "skills": "Compétences",
     "contact": "Contact"
   },
+  "decorative": {
+    "aboutMe": "A_PROPOS://",
+    "workHistory": "HISTORIQUE_PROFESSIONNEL://",
+    "portfolio": "PORTFOLIO://",
+    "techStack": "STACK_TECHNIQUE://",
+    "expertiseLevel": "NIVEAU_EXPERTISE://",
+    "professionalSkills": "COMPETENCES_PROFESSIONNELLES://",
+    "technologiesUsed": "TECHNOLOGIES_UTILISEES:",
+    "scroll": "DÉFILER"
+  },
   "hero": {
     "title": "Développeur Full-stack",
     "subtitle": "14+ ans de développement de solutions logicielles",
@@ -14,7 +24,19 @@
   },
   "about": {
     "title": "À propos de moi",
-    "text": "En tant que développeur full-stack expérimenté, j'apporte plus de 14 ans d'expérience dans le développement de solutions logicielles diverses dans les secteurs du commerce électronique, de la vente au détail et des télécommunications. Au cours des 7 dernières années, je me suis spécialisé dans Laravel Framework, en créant des applications pour utilisateurs finaux et des intégrations middleware. Mon expertise comprend Vue.js, .NET (C#), Java, Ionic Framework et les services d'IA cloud comme AWS Textract et Google Cloud Vision."
+    "text": "En tant que développeur full-stack expérimenté, j'apporte plus de 14 ans d'expérience dans le développement de solutions logicielles diverses dans les secteurs du commerce électronique, de la vente au détail et des télécommunications. Au cours des 7 dernières années, je me suis spécialisé dans Laravel Framework, en créant des applications pour utilisateurs finaux et des intégrations middleware. Mon expertise comprend Vue.js, .NET (C#), Java, Ionic Framework et les services d'IA cloud comme AWS Textract et Google Cloud Vision.",
+    "status": {
+      "label": "statut:",
+      "value": "actif"
+    },
+    "location": {
+      "label": "localisation:",
+      "value": "télétravail_mondial"
+    },
+    "mode": {
+      "label": "mode:",
+      "value": "full_stack"
+    }
   },
   "experience": {
     "title": "Expérience",
@@ -194,6 +216,154 @@
   },
   "footer": {
     "rights": "Tous droits réservés",
-    "made": "Créé avec Astro et Tailwind CSS"
+    "made": "Créé avec Astro et Tailwind CSS",
+    "quickLinks": "LIENS_RAPIDES://",
+    "connect": "CONNECTER://",
+    "role": "Ingénieur Logiciel Full-stack"
+  },
+  "hardSkills": {
+    "title": "Expertise Technique",
+    "subtitle": "Compétence technique complète sur l'ensemble du stack de développement",
+    "expertiseLevels": {
+      "expert": "Expert",
+      "proficient": "Compétent",
+      "working": "Connaissances Pratiques"
+    },
+    "categories": {
+      "backend": {
+        "name": "Développement Backend",
+        "description": "Expertise approfondie en développement côté serveur, ayant conçu et livré des systèmes de production pendant plus de 7 ans avec Laravel et PHP",
+        "items": ["Laravel Framework", "PHP 7+/8+", "APIs RESTful", "Architecture Microservices"]
+      },
+      "frontend": {
+        "name": "Développement Frontend",
+        "description": "Solide maîtrise des technologies frontend modernes, construisant des interfaces utilisateur réactives et interactives",
+        "items": ["Vue.js", "JavaScript ES6+", "HTML5/CSS3", "Design Responsive"]
+      },
+      "architecture": {
+        "name": "Architecture Système",
+        "description": "Vaste expérience dans la conception de systèmes évolutifs et sécurisés dans plusieurs industries et stacks technologiques",
+        "items": ["Conception de Systèmes", "Modèles de Scalabilité", "Meilleures Pratiques de Sécurité", "Conception d'APIs"]
+      },
+      "database": {
+        "name": "Gestion de Bases de Données",
+        "description": "Expérience solide en conception, optimisation et gestion de bases de données sur diverses plateformes SGBDR",
+        "items": ["MySQL", "SQL Server", "Oracle", "Optimisation de Requêtes", "Conception de BD"]
+      },
+      "versionControl": {
+        "name": "Contrôle de Version & Collaboration",
+        "description": "Bien versé dans les workflows Git, les pratiques de collaboration de code et les processus de développement en équipe",
+        "items": ["Workflows Git", "Stratégies de Branching", "Revue de Code", "GitHub/GitLab"]
+      },
+      "devops": {
+        "name": "DevOps & Infrastructure",
+        "description": "Expérience pratique avec la conteneurisation, les pipelines CI/CD et la gestion d'infrastructure cloud",
+        "items": ["Docker", "Pipelines CI/CD", "Gestion de Serveurs", "Plateformes Cloud"]
+      },
+      "mobile": {
+        "name": "Développement Mobile",
+        "description": "Expérience pratique dans la construction d'applications mobiles multiplateformes utilisant des frameworks hybrides",
+        "items": ["Ionic Framework", "Apps Hybrides", "Design Mobile-First", "Cordova/Capacitor"]
+      },
+      "ai": {
+        "name": "IA & Services Cloud",
+        "description": "Connaissances pratiques pour l'intégration de services d'IA et d'APIs cloud dans des applications de production",
+        "items": ["AWS Textract", "Google Cloud Vision", "Intégration API IA", "Solutions OCR"]
+      }
+    },
+    "certifications": {
+      "title": "Certifications et Formation",
+      "items": [
+        {
+          "name": "Fondamentaux Scrum",
+          "description": "Méthodologie agile et fondamentaux du framework Scrum"
+        },
+        {
+          "name": "Design Thinking",
+          "description": "Méthodologie de conception centrée utilisateur et innovation"
+        }
+      ]
+    }
+  },
+  "softSkills": {
+    "title": "Compétences Professionnelles",
+    "subtitle": "Capacités de leadership et collaboration qui garantissent le succès des projets",
+    "categories": {
+      "communication": {
+        "title": "Communication et Collaboration",
+        "items": [
+          "Leadership et mentorat d'équipes techniques",
+          "Engagement direct avec clients et parties prenantes",
+          "Présentations techniques à audiences non techniques",
+          "Collaboration en équipes multidisciplinaires"
+        ]
+      },
+      "leadership": {
+        "title": "Leadership et Mentorat",
+        "items": [
+          "Guidance et support d'équipes techniques",
+          "Mentorat de développeurs juniors (7+ ans)",
+          "Onboarding et formation d'équipes",
+          "Promotion de l'open source et partage de connaissances"
+        ]
+      },
+      "problemSolving": {
+        "title": "Résolution de Problèmes",
+        "items": [
+          "Résolution de défis techniques complexes",
+          "Méthodologie de débogage boîte noire",
+          "Analyse des causes racines",
+          "Développement de solutions innovantes"
+        ]
+      },
+      "projectManagement": {
+        "title": "Gestion de Projets",
+        "items": [
+          "Expertise en méthodologie Agile/Scrum",
+          "Livraison de projets de bout en bout",
+          "Planification de sprints et estimation de temps",
+          "Gestion des parties prenantes"
+        ]
+      },
+      "adaptability": {
+        "title": "Adaptabilité et Apprentissage",
+        "items": [
+          "Adoption rapide de technologies via POCs",
+          "À l'aise avec divers stacks technologiques",
+          "Expérience de changement entre industries",
+          "Mentalité d'apprentissage continu"
+        ]
+      },
+      "business": {
+        "title": "Sens des Affaires",
+        "items": [
+          "Expertise en collecte d'exigences",
+          "Analyse commerciale et documentation",
+          "Traduction technique-business",
+          "Conseil orienté solutions"
+        ]
+      }
+    },
+    "highlights": {
+      "title": "Réalisations Notables",
+      "items": [
+        {
+          "title": "Intégration Plateforme Biométrique",
+          "description": "Intégration réussie d'un moteur de recherche biométrique complexe, offrant une intégration transparente de dispositifs tiers pour la sécurité institutionnelle"
+        },
+        {
+          "title": "Middleware SAP-Cisco ISE",
+          "description": "Développement d'un système automatisé de provisionnement WiFi intégrant SAP ISH avec l'API Cisco ISE via messagerie HL7 pour environnements de santé"
+        },
+        {
+          "title": "Leadership Technique",
+          "description": "Direction de décisions techniques et choix d'architecture dans plusieurs industries, des OSS télécom aux plateformes e-commerce retail"
+        },
+        {
+          "title": "Défenseur de l'Open Source",
+          "description": "Champion des solutions open-source, recommandant et implémentant systématiquement l'OSS avant le développement personnalisé"
+        }
+      ]
+    }
   }
 }

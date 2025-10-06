@@ -6,6 +6,16 @@
     "skills": "Skills",
     "contact": "Contact"
   },
+  "decorative": {
+    "aboutMe": "ABOUT_ME://",
+    "workHistory": "WORK_HISTORY://",
+    "portfolio": "PORTFOLIO://",
+    "techStack": "TECH_STACK://",
+    "expertiseLevel": "EXPERTISE_LEVEL://",
+    "professionalSkills": "PROFESSIONAL_SKILLS://",
+    "technologiesUsed": "TECHNOLOGIES_USED:",
+    "scroll": "SCROLL"
+  },
   "hero": {
     "title": "Fullstack Developer",
     "subtitle": "14+ years building software solutions",
@@ -14,7 +24,19 @@
   },
   "about": {
     "title": "About Me",
-    "text": "As a seasoned full-stack programmer, I bring over 14 years of experience developing diverse software solutions across ecommerce, retail, and telecom industries. For the past 7 years, I've specialized in Laravel Framework, building end-user applications and middleware integrations. My expertise includes Vue.js, .NET (C#), Java, Ionic Framework, and cloud AI services like AWS Textract and Google Cloud Vision."
+    "text": "As a seasoned full-stack programmer, I bring over 14 years of experience developing diverse software solutions across ecommerce, retail, and telecom industries. For the past 7 years, I've specialized in Laravel Framework, building end-user applications and middleware integrations. My expertise includes Vue.js, .NET (C#), Java, Ionic Framework, and cloud AI services like AWS Textract and Google Cloud Vision.",
+    "status": {
+      "label": "status:",
+      "value": "active"
+    },
+    "location": {
+      "label": "location:",
+      "value": "worldwide_remote"
+    },
+    "mode": {
+      "label": "mode:",
+      "value": "full_stack"
+    }
   },
   "experience": {
     "title": "Experience",
@@ -194,6 +216,154 @@
   },
   "footer": {
     "rights": "All rights reserved",
-    "made": "Built with Astro & Tailwind CSS"
+    "made": "Built with Astro & Tailwind CSS",
+    "quickLinks": "QUICK_LINKS://",
+    "connect": "CONNECT://",
+    "role": "Full-stack Software Engineer"
+  },
+  "hardSkills": {
+    "title": "Technical Expertise",
+    "subtitle": "Comprehensive technical proficiency across the full development stack",
+    "expertiseLevels": {
+      "expert": "Expert",
+      "proficient": "Proficient",
+      "working": "Working Knowledge"
+    },
+    "categories": {
+      "backend": {
+        "name": "Backend Development",
+        "description": "Deep expertise in server-side development, having architected and delivered production systems for 7+ years with Laravel and PHP",
+        "items": ["Laravel Framework", "PHP 7+/8+", "RESTful APIs", "Microservices Architecture"]
+      },
+      "frontend": {
+        "name": "Frontend Development",
+        "description": "Strong proficiency in modern frontend technologies, building responsive and interactive user interfaces",
+        "items": ["Vue.js", "JavaScript ES6+", "HTML5/CSS3", "Responsive Design"]
+      },
+      "architecture": {
+        "name": "System Architecture",
+        "description": "Extensive experience designing scalable, secure systems across multiple industries and technology stacks",
+        "items": ["System Design", "Scalability Patterns", "Security Best Practices", "API Design"]
+      },
+      "database": {
+        "name": "Database Management",
+        "description": "Solid experience in database design, optimization, and management across various RDBMS platforms",
+        "items": ["MySQL", "SQL Server", "Oracle", "Query Optimization", "Database Design"]
+      },
+      "versionControl": {
+        "name": "Version Control & Collaboration",
+        "description": "Well-versed in Git workflows, code collaboration practices, and team development processes",
+        "items": ["Git Workflows", "Branching Strategies", "Code Review", "GitHub/GitLab"]
+      },
+      "devops": {
+        "name": "DevOps & Infrastructure",
+        "description": "Practical experience with containerization, CI/CD pipelines, and cloud infrastructure management",
+        "items": ["Docker", "CI/CD Pipelines", "Server Management", "Cloud Platforms"]
+      },
+      "mobile": {
+        "name": "Mobile Development",
+        "description": "Hands-on experience building cross-platform mobile applications using hybrid frameworks",
+        "items": ["Ionic Framework", "Hybrid Apps", "Mobile-First Design", "Cordova/Capacitor"]
+      },
+      "ai": {
+        "name": "AI & Cloud Services",
+        "description": "Working knowledge integrating AI services and cloud APIs into production applications",
+        "items": ["AWS Textract", "Google Cloud Vision", "AI API Integration", "OCR Solutions"]
+      }
+    },
+    "certifications": {
+      "title": "Certifications & Training",
+      "items": [
+        {
+          "name": "Scrum Basics",
+          "description": "Agile methodology and Scrum framework fundamentals"
+        },
+        {
+          "name": "Design Thinking",
+          "description": "User-centered design and innovation methodology"
+        }
+      ]
+    }
+  },
+  "softSkills": {
+    "title": "Professional Skills",
+    "subtitle": "Leadership and collaboration capabilities that drive project success",
+    "categories": {
+      "communication": {
+        "title": "Communication & Collaboration",
+        "items": [
+          "Technical team leadership and mentoring",
+          "Direct client and stakeholder engagement",
+          "Technical presentations to non-technical audiences",
+          "Cross-functional team collaboration"
+        ]
+      },
+      "leadership": {
+        "title": "Leadership & Mentorship",
+        "items": [
+          "Technical team guidance and support",
+          "Junior developer mentoring (7+ years)",
+          "Team onboarding and training",
+          "Open-source advocacy and knowledge sharing"
+        ]
+      },
+      "problemSolving": {
+        "title": "Problem Solving & Analysis",
+        "items": [
+          "Complex technical challenge resolution",
+          "Black-box debugging methodology",
+          "Root cause analysis",
+          "Innovative solution development"
+        ]
+      },
+      "projectManagement": {
+        "title": "Project Management",
+        "items": [
+          "Agile/Scrum methodology expertise",
+          "End-to-end project delivery",
+          "Sprint planning and time estimation",
+          "Stakeholder management"
+        ]
+      },
+      "adaptability": {
+        "title": "Adaptability & Learning",
+        "items": [
+          "Rapid technology adoption through POCs",
+          "Comfortable with diverse tech stacks",
+          "Industry pivoting experience",
+          "Continuous learning mindset"
+        ]
+      },
+      "business": {
+        "title": "Business Acumen",
+        "items": [
+          "Requirements gathering expertise",
+          "Business analysis and documentation",
+          "Technical-to-business translation",
+          "Solution-oriented consulting"
+        ]
+      }
+    },
+    "highlights": {
+      "title": "Notable Achievements",
+      "items": [
+        {
+          "title": "Biometric Platform Integration",
+          "description": "Successfully integrated complex biometric data search engine, delivering seamless third-party device integration for institutional security"
+        },
+        {
+          "title": "SAP-Cisco ISE Middleware",
+          "description": "Developed automated WiFi provisioning system integrating SAP ISH with Cisco ISE API using HL7 messaging for healthcare environments"
+        },
+        {
+          "title": "Technical Leadership",
+          "description": "Led technical decisions and architecture choices across multiple industries, from telecom OSS to retail e-commerce platforms"
+        },
+        {
+          "title": "Open Source Advocate",
+          "description": "Champion of open-source solutions, consistently recommending and implementing OSS before custom development"
+        }
+      ]
+    }
   }
 }

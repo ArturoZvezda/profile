@@ -6,6 +6,16 @@
     "skills": "Habilidades",
     "contact": "Contacto"
   },
+  "decorative": {
+    "aboutMe": "SOBRE_MI://",
+    "workHistory": "HISTORIAL_LABORAL://",
+    "portfolio": "PORTAFOLIO://",
+    "techStack": "STACK_TECNICO://",
+    "expertiseLevel": "NIVEL_EXPERIENCIA://",
+    "professionalSkills": "HABILIDADES_PROFESIONALES://",
+    "technologiesUsed": "TECNOLOGIAS_USADAS:",
+    "scroll": "DESPLAZAR"
+  },
   "hero": {
     "title": "Desarrollador Full-stack",
     "subtitle": "14+ años construyendo soluciones de software",
@@ -14,7 +24,19 @@
   },
   "about": {
     "title": "Sobre mí",
-    "text": "Como programador full-stack experimentado, aporto más de 14 años de experiencia desarrollando soluciones de software diversas en comercio electrónico, retail y telecomunicaciones. Durante los últimos 7 años, me he especializado en Laravel Framework, creando aplicaciones para usuarios finales e integraciones middleware. Mi experiencia incluye Vue.js, .NET (C#), Java, Ionic Framework y servicios de IA en la nube como AWS Textract y Google Cloud Vision."
+    "text": "Como programador full-stack experimentado, aporto más de 14 años de experiencia desarrollando soluciones de software diversas en comercio electrónico, retail y telecomunicaciones. Durante los últimos 7 años, me he especializado en Laravel Framework, creando aplicaciones para usuarios finales e integraciones middleware. Mi experiencia incluye Vue.js, .NET (C#), Java, Ionic Framework y servicios de IA en la nube como AWS Textract y Google Cloud Vision.",
+    "status": {
+      "label": "estado:",
+      "value": "activo"
+    },
+    "location": {
+      "label": "ubicación:",
+      "value": "remoto_mundial"
+    },
+    "mode": {
+      "label": "modo:",
+      "value": "full_stack"
+    }
   },
   "experience": {
     "title": "Experiencia",
@@ -194,6 +216,154 @@
   },
   "footer": {
     "rights": "Todos los derechos reservados",
-    "made": "Construido con Astro y Tailwind CSS"
+    "made": "Construido con Astro y Tailwind CSS",
+    "quickLinks": "ENLACES_RAPIDOS://",
+    "connect": "CONECTAR://",
+    "role": "Ingeniero de Software Full-stack"
+  },
+  "hardSkills": {
+    "title": "Experiencia Técnica",
+    "subtitle": "Competencia técnica integral en todo el stack de desarrollo",
+    "expertiseLevels": {
+      "expert": "Experto",
+      "proficient": "Competente",
+      "working": "Conocimiento Práctico"
+    },
+    "categories": {
+      "backend": {
+        "name": "Desarrollo Backend",
+        "description": "Experiencia profunda en desarrollo del lado del servidor, habiendo arquitecturado y entregado sistemas de producción durante más de 7 años con Laravel y PHP",
+        "items": ["Laravel Framework", "PHP 7+/8+", "APIs RESTful", "Arquitectura de Microservicios"]
+      },
+      "frontend": {
+        "name": "Desarrollo Frontend",
+        "description": "Sólida competencia en tecnologías frontend modernas, construyendo interfaces de usuario responsivas e interactivas",
+        "items": ["Vue.js", "JavaScript ES6+", "HTML5/CSS3", "Diseño Responsive"]
+      },
+      "architecture": {
+        "name": "Arquitectura de Sistemas",
+        "description": "Amplia experiencia diseñando sistemas escalables y seguros en múltiples industrias y stacks tecnológicos",
+        "items": ["Diseño de Sistemas", "Patrones de Escalabilidad", "Mejores Prácticas de Seguridad", "Diseño de APIs"]
+      },
+      "database": {
+        "name": "Gestión de Bases de Datos",
+        "description": "Experiencia sólida en diseño, optimización y gestión de bases de datos en varias plataformas RDBMS",
+        "items": ["MySQL", "SQL Server", "Oracle", "Optimización de Consultas", "Diseño de Bases de Datos"]
+      },
+      "versionControl": {
+        "name": "Control de Versiones & Colaboración",
+        "description": "Bien versado en workflows de Git, prácticas de colaboración de código y procesos de desarrollo en equipo",
+        "items": ["Workflows Git", "Estrategias de Branching", "Revisión de Código", "GitHub/GitLab"]
+      },
+      "devops": {
+        "name": "DevOps & Infraestructura",
+        "description": "Experiencia práctica con contenedorización, pipelines CI/CD y gestión de infraestructura cloud",
+        "items": ["Docker", "Pipelines CI/CD", "Gestión de Servidores", "Plataformas Cloud"]
+      },
+      "mobile": {
+        "name": "Desarrollo Móvil",
+        "description": "Experiencia práctica construyendo aplicaciones móviles multiplataforma usando frameworks híbridos",
+        "items": ["Ionic Framework", "Apps Híbridas", "Diseño Mobile-First", "Cordova/Capacitor"]
+      },
+      "ai": {
+        "name": "IA & Servicios Cloud",
+        "description": "Conocimiento práctico integrando servicios de IA y APIs cloud en aplicaciones de producción",
+        "items": ["AWS Textract", "Google Cloud Vision", "Integración APIs IA", "Soluciones OCR"]
+      }
+    },
+    "certifications": {
+      "title": "Certificaciones y Capacitación",
+      "items": [
+        {
+          "name": "Fundamentos de Scrum",
+          "description": "Metodología ágil y fundamentos del marco Scrum"
+        },
+        {
+          "name": "Design Thinking",
+          "description": "Metodología de diseño centrado en el usuario e innovación"
+        }
+      ]
+    }
+  },
+  "softSkills": {
+    "title": "Habilidades Profesionales",
+    "subtitle": "Capacidades de liderazgo y colaboración que impulsan el éxito de los proyectos",
+    "categories": {
+      "communication": {
+        "title": "Comunicación y Colaboración",
+        "items": [
+          "Liderazgo y mentoría de equipos técnicos",
+          "Interacción directa con clientes y stakeholders",
+          "Presentaciones técnicas a audiencias no técnicas",
+          "Colaboración en equipos multifuncionales"
+        ]
+      },
+      "leadership": {
+        "title": "Liderazgo y Mentoría",
+        "items": [
+          "Guía y soporte de equipos técnicos",
+          "Mentoría de desarrolladores junior (7+ años)",
+          "Onboarding y capacitación de equipos",
+          "Promoción de código abierto y compartir conocimiento"
+        ]
+      },
+      "problemSolving": {
+        "title": "Resolución de Problemas",
+        "items": [
+          "Resolución de desafíos técnicos complejos",
+          "Metodología de debugging de caja negra",
+          "Análisis de causa raíz",
+          "Desarrollo de soluciones innovadoras"
+        ]
+      },
+      "projectManagement": {
+        "title": "Gestión de Proyectos",
+        "items": [
+          "Experiencia en metodología Agile/Scrum",
+          "Entrega de proyectos de principio a fin",
+          "Planificación de sprints y estimación de tiempos",
+          "Gestión de stakeholders"
+        ]
+      },
+      "adaptability": {
+        "title": "Adaptabilidad y Aprendizaje",
+        "items": [
+          "Adopción rápida de tecnologías mediante POCs",
+          "Cómodo con diversos stacks tecnológicos",
+          "Experiencia cambiando entre industrias",
+          "Mentalidad de aprendizaje continuo"
+        ]
+      },
+      "business": {
+        "title": "Visión de Negocio",
+        "items": [
+          "Experiencia en levantamiento de requisitos",
+          "Análisis de negocio y documentación",
+          "Traducción técnico-negocio",
+          "Consultoría orientada a soluciones"
+        ]
+      }
+    },
+    "highlights": {
+      "title": "Logros Destacados",
+      "items": [
+        {
+          "title": "Integración de Plataforma Biométrica",
+          "description": "Integración exitosa de motor de búsqueda biométrica complejo, entregando integración fluida de dispositivos de terceros para seguridad institucional"
+        },
+        {
+          "title": "Middleware SAP-Cisco ISE",
+          "description": "Desarrollo de sistema automatizado de aprovisionamiento WiFi integrando SAP ISH con API Cisco ISE usando mensajería HL7 para entornos de salud"
+        },
+        {
+          "title": "Liderazgo Técnico",
+          "description": "Lideré decisiones técnicas y elecciones de arquitectura en múltiples industrias, desde OSS telecom hasta plataformas e-commerce retail"
+        },
+        {
+          "title": "Defensor del Código Abierto",
+          "description": "Promotor de soluciones open-source, recomendando e implementando consistentemente OSS antes del desarrollo personalizado"
+        }
+      ]
+    }
   }
 }

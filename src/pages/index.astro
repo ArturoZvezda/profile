@@ -9,6 +9,8 @@ import Experience from '../components/Experience.astro';
 import Projects from '../components/Projects.astro';
 import Consulting from '../components/Consulting.astro';
 import Skills from '../components/Skills.astro';
+import HardSkills from '../components/HardSkills.astro';
+import SoftSkills from '../components/SoftSkills.astro';
 import Contact from '../components/Contact.astro';
 
 import enTranslations from '../i18n/en.json';
@@ -24,29 +26,90 @@ const translations = {
 
 <Layout title="Arturo Zvezda - Full-stack Software Engineer">
   <CyberBackground />
-  <div id="app" data-lang="en" class="relative z-10">
-    <Header t={translations.en} />
+  <div id="app" data-lang="es" class="relative z-10">
+    <Header t={translations.es} />
     <main>
-      <Hero t={translations.en} />
+      <Hero t={translations.es} />
       <TechMarquee />
-      <About t={translations.en} />
-      <Consulting t={translations.en} />
-      <Experience t={translations.en} />
-      <Projects t={translations.en} />
-      <Skills t={translations.en} />
-      <Contact t={translations.en} />
+      <About t={translations.es} />
+      <Consulting t={translations.es} />
+      <Experience t={translations.es} />
+      <Projects t={translations.es} />
+      <Skills t={translations.es} />
+      <HardSkills t={translations.es} />
+      <SoftSkills t={translations.es} />
+      <Contact t={translations.es} />
     </main>
 
-    <footer class="relative bg-[#0a0a0a] border-t border-[#2a2a2a] text-gray-600 py-12">
-      <div class="container mx-auto px-4 text-center">
-        <p id="footer-rights" class="text-sm">© 2024 Arturo Zvezda. {translations.en.footer.rights}</p>
-        <p id="footer-made" class="text-xs mt-2 text-gray-700">{translations.en.footer.made}</p>
+    <footer class="relative glass-card border-t border-cyan-500/20 text-gray-400 py-16 overflow-hidden">
+      <!-- Background elements -->
+      <div class="absolute top-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-cyan-500/50 to-transparent"></div>
+      <div class="absolute bottom-0 right-1/4 w-48 h-48 bg-cyan-500/5 rounded-full blur-3xl"></div>
+      <div class="absolute top-0 left-1/4 w-48 h-48 bg-magenta-500/5 rounded-full blur-3xl"></div>
+
+      <div class="container mx-auto px-4 relative z-10">
+        <div class="max-w-6xl mx-auto">
+          <!-- Footer content -->
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+            <!-- Brand -->
+            <div>
+              <div class="flex items-center gap-2 mb-4">
+                <div class="w-10 h-10 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 flex items-center justify-center
+                            shadow-[0_0_20px_rgba(0,255,255,0.3)]">
+                  <span class="text-white font-bold text-lg">AZ</span>
+                </div>
+                <span class="text-lg font-bold holographic-text">Arturo Zvezda</span>
+              </div>
+              <p id="footer-role" class="text-sm text-gray-500">{translations.es.footer.role}</p>
+            </div>
+
+            <!-- Quick links -->
+            <div>
+              <h4 id="footer-quick-links" class="text-sm font-mono text-cyan-400/80 uppercase tracking-wider mb-4">{translations.es.footer.quickLinks}</h4>
+              <div class="flex flex-col gap-2">
+                <a href="#about" id="footer-link-about" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-300">{translations.es.nav.about}</a>
+                <a href="#experience" id="footer-link-experience" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-300">{translations.es.nav.experience}</a>
+                <a href="#projects" id="footer-link-projects" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-300">{translations.es.nav.projects}</a>
+                <a href="#skills" id="footer-link-skills" class="text-sm text-gray-400 hover:text-cyan-400 transition-colors duration-300">{translations.es.nav.skills}</a>
+              </div>
+            </div>
+
+            <!-- Connect -->
+            <div>
+              <h4 id="footer-connect" class="text-sm font-mono text-cyan-400/80 uppercase tracking-wider mb-4">{translations.es.footer.connect}</h4>
+              <div class="flex gap-3">
+                <a href="https://www.linkedin.com/in/israel-gc" target="_blank"
+                   class="w-10 h-10 rounded-lg glass-card border border-white/10 flex items-center justify-center
+                          hover:border-cyan-400/50 hover:shadow-[0_0_20px_rgba(0,255,255,0.3)]
+                          transition-all duration-300 group">
+                  <svg class="w-5 h-5 text-gray-400 group-hover:text-cyan-400 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                  </svg>
+                </a>
+                <a href="mailto:iskra.zvezda@gmail.com"
+                   class="w-10 h-10 rounded-lg glass-card border border-white/10 flex items-center justify-center
+                          hover:border-cyan-400/50 hover:shadow-[0_0_20px_rgba(0,255,255,0.3)]
+                          transition-all duration-300 group">
+                  <svg class="w-5 h-5 text-gray-400 group-hover:text-cyan-400 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom bar -->
+          <div class="pt-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-4">
+            <p id="footer-rights" class="text-sm text-gray-500">© 2024 Arturo Zvezda. {translations.es.footer.rights}</p>
+            <p id="footer-made" class="text-xs text-gray-600 font-mono">{translations.es.footer.made}</p>
+          </div>
+        </div>
       </div>
     </footer>
   </div>
 
   <script define:vars={{ translations }}>
-    let currentLang = 'en';
+    let currentLang = 'es'; // Default language is Spanish
 
     const langLabels = {
       'en': 'EN',
@@ -60,8 +123,10 @@ const translations = {
       document.getElementById('app').dataset.lang = lang;
 
       // Update language switcher labels
-      document.querySelector('.current-lang').textContent = langLabels[lang];
-      document.querySelector('.current-lang-mobile').textContent = langLabels[lang];
+      const currentLangDesktop = document.querySelector('.current-lang');
+      const currentLangMobile = document.querySelector('.current-lang-mobile');
+      if (currentLangDesktop) currentLangDesktop.textContent = langLabels[lang];
+      if (currentLangMobile) currentLangMobile.textContent = langLabels[lang];
 
       // Close dropdown menus
       document.getElementById('lang-menu-desktop')?.classList.add('hidden');
@@ -69,160 +134,385 @@ const translations = {
 
       // Update nav
       const navLinks = document.querySelectorAll('nav a');
-      navLinks[0].textContent = t.nav.about;
-      navLinks[1].textContent = t.nav.experience;
-      navLinks[2].textContent = t.nav.projects;
-      navLinks[3].textContent = t.nav.skills;
-      navLinks[4].textContent = t.nav.contact;
+      if (navLinks && navLinks.length >= 5) {
+        if (navLinks[0]) navLinks[0].textContent = t.nav.about;
+        if (navLinks[1]) navLinks[1].textContent = t.nav.experience;
+        if (navLinks[2]) navLinks[2].textContent = t.nav.projects;
+        if (navLinks[3]) navLinks[3].textContent = t.nav.skills;
+        if (navLinks[4]) navLinks[4].textContent = t.nav.contact;
+      }
 
       // Update hero
-      document.querySelector('h2').textContent = t.hero.title;
-      document.querySelectorAll('section p')[0].textContent = t.hero.subtitle;
-      document.querySelectorAll('section p')[1].textContent = t.hero.description;
-      document.querySelector('a[href="#contact"]').textContent = t.hero.cta;
+      const heroSection = document.querySelector('section.relative.min-h-screen');
+      if (heroSection) {
+        const heroTitle = heroSection.querySelector('h2');
+        if (heroTitle) heroTitle.textContent = t.hero.title;
+
+        const heroSubtitle = heroSection.querySelector('.glass-card p.text-lg.sm\\:text-xl');
+        if (heroSubtitle) heroSubtitle.textContent = t.hero.subtitle;
+
+        const heroDescription = heroSection.querySelector('.glass-card p.text-base.text-gray-400');
+        if (heroDescription) heroDescription.textContent = t.hero.description;
+
+        const ctaContact = heroSection.querySelector('a[href="#contact"] span');
+        if (ctaContact) ctaContact.textContent = t.hero.cta;
+      }
 
       // Update about
-      document.querySelectorAll('h2')[1].textContent = t.about.title;
-      document.querySelector('#about p').textContent = t.about.text;
+      const aboutSection = document.querySelector('#about');
+      if (aboutSection) {
+        const aboutTitle = aboutSection.querySelector('h2');
+        if (aboutTitle) aboutTitle.textContent = t.about.title;
+
+        const aboutText = aboutSection.querySelector('p.text-lg.sm\\:text-xl');
+        if (aboutText) aboutText.textContent = t.about.text;
+      }
 
       // Update consulting
-      document.querySelectorAll('h2')[2].textContent = t.consulting.title;
-      const consultingBadge = document.querySelector('#consulting .subtle-float span');
-      if (consultingBadge) consultingBadge.textContent = t.consulting.badge;
-      const consultingSubtitle = document.querySelector('#consulting h2 + p.text-lg');
-      if (consultingSubtitle) consultingSubtitle.textContent = t.consulting.subtitle;
-      const consultingDesc = document.querySelector('#consulting h2 + p.text-lg + p');
-      if (consultingDesc) consultingDesc.textContent = t.consulting.description;
+      const consultingSection = document.querySelector('#consulting');
+      if (consultingSection) {
+        const consultingTitle = consultingSection.querySelector('h2');
+        if (consultingTitle) consultingTitle.textContent = t.consulting.title;
 
-      // Update consulting services
-      const serviceCards = document.querySelectorAll('.consulting-card');
-      serviceCards.forEach((card, i) => {
-        if (t.consulting.services[i]) {
-          const title = card.querySelector('h3');
-          const desc = card.querySelector('p');
-          if (title) title.textContent = t.consulting.services[i].title;
-          if (desc) desc.textContent = t.consulting.services[i].description;
-        }
-      });
+        const consultingBadge = consultingSection.querySelector('.subtle-float span');
+        if (consultingBadge) consultingBadge.textContent = t.consulting.badge;
 
-      // Update consulting CTA
-      const ctaTitle = document.querySelector('#consulting .cta-box h3');
-      const ctaDesc = document.querySelector('#consulting .cta-box p');
-      const ctaBtn = document.querySelector('#consulting .cta-box a');
-      if (ctaTitle) ctaTitle.textContent = t.consulting.cta.title;
-      if (ctaDesc) ctaDesc.textContent = t.consulting.cta.description;
-      if (ctaBtn) ctaBtn.textContent = t.consulting.cta.button;
+        const consultingSubtitle = consultingSection.querySelector('p.text-xl.sm\\:text-2xl');
+        if (consultingSubtitle) consultingSubtitle.textContent = t.consulting.subtitle;
 
-      // Update experience
-      document.querySelectorAll('h2')[3].textContent = t.experience.title;
-      const jobs = document.querySelectorAll('#experience > div > div > div');
-      jobs.forEach((job, i) => {
-        const jobData = t.experience.jobs[i];
-        job.querySelector('h3').textContent = jobData.company;
-        job.querySelector('h4').textContent = jobData.role;
-        job.querySelector('span').textContent = jobData.period;
-        job.querySelector('p').textContent = jobData.description;
-      });
+        const consultingDesc = consultingSection.querySelector('p.text-base.text-gray-400');
+        if (consultingDesc) consultingDesc.textContent = t.consulting.description;
 
-      // Update projects
-      document.querySelectorAll('h2')[4].textContent = t.projects.title;
-      const projectsSubtitle = document.querySelector('#projects p.text-base');
-      if (projectsSubtitle) projectsSubtitle.textContent = t.projects.subtitle;
-
-      // Update project cards
-      const projectCards = document.querySelectorAll('.project-card');
-      projectCards.forEach((card, i) => {
-        if (t.projects.items[i]) {
-          const project = t.projects.items[i];
-
-          // Update featured badge
-          const featuredBadge = card.querySelector('.absolute.top-0.right-0');
-          if (featuredBadge) featuredBadge.textContent = t.projects.featured;
-
-          // Update industry badge
-          const industryBadge = card.querySelector('span.px-3.py-1');
-          if (industryBadge) industryBadge.textContent = project.industry;
-
-          // Update title and description
-          const title = card.querySelector('h3');
-          const desc = card.querySelector('p.text-sm');
-          if (title) title.textContent = project.title;
-          if (desc) desc.textContent = project.description;
-
-          // Update "Key Features" label
-          const keyFeaturesLabel = card.querySelectorAll('h4')[0];
-          if (keyFeaturesLabel) keyFeaturesLabel.textContent = t.projects.keyFeatures;
-
-          // Update highlights
-          const highlights = card.querySelectorAll('.flex.items-start.gap-2 span');
-          highlights.forEach((highlight, idx) => {
-            if (project.highlights[idx]) {
-              highlight.textContent = project.highlights[idx];
+        // Update consulting services
+        const serviceCards = consultingSection.querySelectorAll('.consulting-card');
+        if (serviceCards && serviceCards.length > 0) {
+          serviceCards.forEach((card, i) => {
+            if (card && t.consulting.services[i]) {
+              const title = card.querySelector('h3');
+              const desc = card.querySelector('p');
+              if (title) title.textContent = t.consulting.services[i].title;
+              if (desc) desc.textContent = t.consulting.services[i].description;
             }
           });
-
-          // Update "Tech Stack" label
-          const techStackLabel = card.querySelectorAll('h4')[1];
-          if (techStackLabel) techStackLabel.textContent = t.projects.techStack;
         }
-      });
 
-      // Update industries served
-      const industriesLabel = document.querySelector('#projects h4.text-sm');
-      if (industriesLabel) industriesLabel.textContent = t.projects.industriesServed;
-
-      const industryTags = document.querySelectorAll('#projects .flex.flex-wrap.gap-3 span');
-      industryTags.forEach((tag, i) => {
-        if (t.projects.industries[i]) {
-          tag.textContent = t.projects.industries[i];
+        // Update consulting CTA
+        const ctaBox = consultingSection.querySelector('.glass-card.p-10');
+        if (ctaBox) {
+          const ctaTitle = ctaBox.querySelector('h3');
+          const ctaDesc = ctaBox.querySelector('p.text-lg');
+          const ctaBtn = ctaBox.querySelector('a');
+          if (ctaTitle) ctaTitle.textContent = t.consulting.cta.title;
+          if (ctaDesc) ctaDesc.textContent = t.consulting.cta.description;
+          if (ctaBtn) ctaBtn.textContent = t.consulting.cta.button;
         }
-      });
+      }
+
+      // Update experience
+      const experienceSection = document.querySelector('#experience');
+      if (experienceSection) {
+        const experienceTitle = experienceSection.querySelector('h2');
+        if (experienceTitle) experienceTitle.textContent = t.experience.title;
+
+        const jobs = experienceSection.querySelectorAll('.experience-item');
+        if (jobs && jobs.length > 0) {
+          jobs.forEach((job, i) => {
+            if (job && t.experience.jobs[i]) {
+              const jobData = t.experience.jobs[i];
+              const companyEl = job.querySelector('h3');
+              const roleEl = job.querySelector('h4');
+              const periodEl = job.querySelector('span.text-sm.text-cyan-400');
+              const descEl = job.querySelector('p.text-base');
+
+              if (companyEl) companyEl.textContent = jobData.company;
+              if (roleEl) roleEl.textContent = jobData.role;
+              if (periodEl) periodEl.textContent = jobData.period;
+              if (descEl) descEl.textContent = jobData.description;
+            }
+          });
+        }
+      }
+
+      // Update projects
+      const projectsSection = document.querySelector('#projects');
+      if (projectsSection) {
+        const projectsTitle = projectsSection.querySelector('h2');
+        if (projectsTitle) projectsTitle.textContent = t.projects.title;
+
+        const projectsSubtitle = projectsSection.querySelector('p.text-lg');
+        if (projectsSubtitle) projectsSubtitle.textContent = t.projects.subtitle;
+
+        // Update project cards
+        const projectCards = projectsSection.querySelectorAll('.project-card');
+        if (projectCards && projectCards.length > 0) {
+          projectCards.forEach((card, i) => {
+            if (card && t.projects.items[i]) {
+              const project = t.projects.items[i];
+
+              // Update featured badge
+              const featuredBadge = card.querySelector('.absolute.top-0.right-0');
+              if (featuredBadge) featuredBadge.textContent = t.projects.featured;
+
+              // Update industry badge
+              const industryBadge = card.querySelector('span.px-4.py-1\\.5');
+              if (industryBadge) industryBadge.textContent = project.industry;
+
+              // Update title and description
+              const title = card.querySelector('h3');
+              const desc = card.querySelector('p.text-sm');
+              if (title) title.textContent = project.title;
+              if (desc) desc.textContent = project.description;
+
+              // Update "Key Features" label
+              const keyFeaturesLabel = card.querySelectorAll('h4')[0];
+              if (keyFeaturesLabel) keyFeaturesLabel.textContent = t.projects.keyFeatures;
+
+              // Update highlights
+              const highlights = card.querySelectorAll('.flex.items-start.gap-2 span.text-xs');
+              if (highlights && highlights.length > 0 && project.highlights) {
+                highlights.forEach((highlight, idx) => {
+                  if (highlight && project.highlights[idx]) {
+                    highlight.textContent = project.highlights[idx];
+                  }
+                });
+              }
+
+              // Update "Tech Stack" label
+              const techStackLabel = card.querySelectorAll('h4')[1];
+              if (techStackLabel) techStackLabel.textContent = t.projects.techStack;
+            }
+          });
+        }
+
+        // Update industries served
+        const industriesLabel = projectsSection.querySelector('h4.text-sm');
+        if (industriesLabel) industriesLabel.textContent = t.projects.industriesServed;
+
+        const industryTags = projectsSection.querySelectorAll('.flex.flex-wrap.gap-3 span');
+        if (industryTags && industryTags.length > 0 && t.projects.industries) {
+          industryTags.forEach((tag, i) => {
+            if (tag && t.projects.industries[i]) {
+              tag.textContent = t.projects.industries[i];
+            }
+          });
+        }
+      }
 
       // Update skills
-      document.querySelectorAll('h2')[5].textContent = t.skills.title;
+      const skillsSection = document.querySelector('#skills');
+      if (skillsSection) {
+        const skillsTitle = skillsSection.querySelector('h2');
+        if (skillsTitle) skillsTitle.textContent = t.skills.title;
 
-      // Update skills categories
-      const skillCategories = document.querySelectorAll('#skills .mb-8');
+        // Update skills categories
+        const skillCategories = skillsSection.querySelectorAll('.mb-8');
+        if (skillCategories && skillCategories.length > 0) {
+          // Languages category
+          if (skillCategories[0]) {
+            const langTitle = skillCategories[0].querySelector('h3');
+            const advancedLabel = skillCategories[0].querySelectorAll('h4')[0];
+            const intermediateLabel = skillCategories[0].querySelectorAll('h4')[1];
+            if (langTitle) langTitle.textContent = t.skills.categories.languages.title;
+            if (advancedLabel) advancedLabel.textContent = t.skills.categories.languages.advanced;
+            if (intermediateLabel) intermediateLabel.textContent = t.skills.categories.languages.intermediate;
+          }
 
-      // Languages category
-      if (skillCategories[0]) {
-        const langTitle = skillCategories[0].querySelector('h3');
-        const advancedLabel = skillCategories[0].querySelectorAll('h4')[0];
-        const intermediateLabel = skillCategories[0].querySelectorAll('h4')[1];
-        if (langTitle) langTitle.textContent = t.skills.categories.languages.title;
-        if (advancedLabel) advancedLabel.textContent = t.skills.categories.languages.advanced;
-        if (intermediateLabel) intermediateLabel.textContent = t.skills.categories.languages.intermediate;
-      }
+          // Frameworks category
+          if (skillCategories[1]) {
+            const fwTitle = skillCategories[1].querySelector('h3');
+            const advancedLabel = skillCategories[1].querySelectorAll('h4')[0];
+            const intermediateLabel = skillCategories[1].querySelectorAll('h4')[1];
+            if (fwTitle) fwTitle.textContent = t.skills.categories.frameworks.title;
+            if (advancedLabel) advancedLabel.textContent = t.skills.categories.frameworks.advanced || t.skills.categories.languages.advanced;
+            if (intermediateLabel) intermediateLabel.textContent = t.skills.categories.frameworks.intermediate || t.skills.categories.languages.intermediate;
+          }
 
-      // Frameworks category
-      if (skillCategories[1]) {
-        const fwTitle = skillCategories[1].querySelector('h3');
-        const advancedLabel = skillCategories[1].querySelectorAll('h4')[0];
-        const intermediateLabel = skillCategories[1].querySelectorAll('h4')[1];
-        if (fwTitle) fwTitle.textContent = t.skills.categories.frameworks.title;
-        if (advancedLabel) advancedLabel.textContent = t.skills.categories.frameworks.advanced || t.skills.categories.languages.advanced;
-        if (intermediateLabel) intermediateLabel.textContent = t.skills.categories.frameworks.intermediate || t.skills.categories.languages.intermediate;
-      }
-
-      // Other category
-      if (skillCategories[2]) {
-        const otherTitle = skillCategories[2].querySelector('h3');
-        if (otherTitle) otherTitle.textContent = t.skills.categories.other.title;
+          // Other category
+          if (skillCategories[2]) {
+            const otherTitle = skillCategories[2].querySelector('h3');
+            if (otherTitle) otherTitle.textContent = t.skills.categories.other.title;
+          }
+        }
       }
 
       // Update contact
-      document.querySelectorAll('h2')[6].textContent = t.contact.title;
-      document.querySelector('#contact > div > p').textContent = t.contact.subtitle;
-      document.querySelector('#contact span').textContent = t.contact.location;
+      const contactSection = document.querySelector('#contact');
+      if (contactSection) {
+        const contactTitle = contactSection.querySelector('h2');
+        if (contactTitle) contactTitle.textContent = t.contact.title;
 
-      const contactBtns = document.querySelectorAll('#contact a');
-      contactBtns[0].childNodes[contactBtns[0].childNodes.length - 1].textContent = t.contact.buttons.whatsapp;
-      contactBtns[1].childNodes[contactBtns[1].childNodes.length - 1].textContent = t.contact.buttons.email;
-      contactBtns[2].childNodes[contactBtns[2].childNodes.length - 1].textContent = t.contact.buttons.linkedin;
+        const contactSubtitle = contactSection.querySelector('p.text-lg');
+        if (contactSubtitle) contactSubtitle.textContent = t.contact.subtitle;
+
+        const contactLocation = contactSection.querySelector('span.text-gray-400');
+        if (contactLocation) contactLocation.textContent = t.contact.location;
+
+        const contactBtns = contactSection.querySelectorAll('a.magnetic');
+        if (contactBtns && contactBtns.length >= 3) {
+          if (contactBtns[0] && contactBtns[0].childNodes.length > 0) {
+            contactBtns[0].childNodes[contactBtns[0].childNodes.length - 1].textContent = ' ' + t.contact.buttons.whatsapp;
+          }
+          if (contactBtns[1] && contactBtns[1].childNodes.length > 0) {
+            contactBtns[1].childNodes[contactBtns[1].childNodes.length - 1].textContent = ' ' + t.contact.buttons.email;
+          }
+          if (contactBtns[2] && contactBtns[2].childNodes.length > 0) {
+            contactBtns[2].childNodes[contactBtns[2].childNodes.length - 1].textContent = ' ' + t.contact.buttons.linkedin;
+          }
+        }
+      }
 
       // Update footer
+      document.getElementById('footer-role').textContent = t.footer.role;
+      document.getElementById('footer-quick-links').textContent = t.footer.quickLinks;
+      document.getElementById('footer-link-about').textContent = t.nav.about;
+      document.getElementById('footer-link-experience').textContent = t.nav.experience;
+      document.getElementById('footer-link-projects').textContent = t.nav.projects;
+      document.getElementById('footer-link-skills').textContent = t.nav.skills;
+      document.getElementById('footer-connect').textContent = t.footer.connect;
       document.getElementById('footer-rights').innerHTML = `© 2024 Arturo Zvezda. ${t.footer.rights}`;
       document.getElementById('footer-made').textContent = t.footer.made;
+
+      // Update decorative labels
+      const decorativeLabels = {
+        aboutMe: document.querySelector('#about .text-sm.font-mono'),
+        workHistory: document.querySelector('#experience .text-sm.font-mono'),
+        portfolio: document.querySelector('#projects .text-sm.font-mono'),
+        techStack: document.querySelector('#hero .text-sm.text-cyan-400'),
+        expertiseLevel: document.querySelector('#hard-skills .text-sm.font-mono'),
+        professionalSkills: document.querySelector('#soft-skills .text-sm.font-mono'),
+        scroll: document.querySelector('.animate-bounce .text-xs')
+      };
+
+      if (decorativeLabels.aboutMe) decorativeLabels.aboutMe.textContent = t.decorative.aboutMe;
+      if (decorativeLabels.workHistory) decorativeLabels.workHistory.textContent = t.decorative.workHistory;
+      if (decorativeLabels.portfolio) decorativeLabels.portfolio.textContent = t.decorative.portfolio;
+      if (decorativeLabels.techStack) decorativeLabels.techStack.textContent = t.decorative.techStack;
+      if (decorativeLabels.expertiseLevel) decorativeLabels.expertiseLevel.textContent = t.decorative.expertiseLevel;
+      if (decorativeLabels.professionalSkills) decorativeLabels.professionalSkills.textContent = t.decorative.professionalSkills;
+      if (decorativeLabels.scroll) decorativeLabels.scroll.textContent = t.decorative.scroll;
+
+      // Update About section status indicators
+      const statusLabels = document.querySelectorAll('#about .text-gray-500');
+      const statusValues = document.querySelectorAll('#about .flex.items-center.gap-2 span:last-child');
+      if (statusLabels[0]) statusLabels[0].textContent = t.about.status.label;
+      if (statusLabels[1]) statusLabels[1].textContent = t.about.location.label;
+      if (statusLabels[2]) statusLabels[2].textContent = t.about.mode.label;
+      if (statusValues[0]) statusValues[0].textContent = t.about.status.value;
+      if (statusValues[1]) statusValues[1].textContent = t.about.location.value;
+      if (statusValues[2]) statusValues[2].textContent = t.about.mode.value;
+
+      // Update Experience "Technologies Used" labels
+      const techUsedLabels = document.querySelectorAll('#experience h5');
+      if (techUsedLabels && techUsedLabels.length > 0) {
+        techUsedLabels.forEach(label => {
+          if (label) label.textContent = t.decorative.technologiesUsed;
+        });
+      }
+
+      // Update HardSkills section
+      if (t.hardSkills) {
+        const hardSkillsTitle = document.querySelector('#hard-skills h2');
+        const hardSkillsSubtitle = document.querySelector('#hard-skills p.text-lg');
+        if (hardSkillsTitle) hardSkillsTitle.textContent = t.hardSkills.title;
+        if (hardSkillsSubtitle) hardSkillsSubtitle.textContent = t.hardSkills.subtitle;
+
+        // Update HardSkills categories
+        const hardSkillCards = document.querySelectorAll('#hard-skills .glass-card.card-3d');
+        if (hardSkillCards && hardSkillCards.length > 0) {
+          const hardSkillCats = [
+            t.hardSkills.categories.backend,
+            t.hardSkills.categories.frontend,
+            t.hardSkills.categories.architecture,
+            t.hardSkills.categories.database,
+            t.hardSkills.categories.versionControl,
+            t.hardSkills.categories.devops,
+            t.hardSkills.categories.mobile,
+            t.hardSkills.categories.ai
+          ];
+
+          hardSkillCards.forEach((card, i) => {
+            if (card && hardSkillCats[i]) {
+              const title = card.querySelector('h3');
+              const desc = card.querySelector('p.text-sm.text-gray-400');
+              if (title) title.textContent = hardSkillCats[i].name;
+              if (desc) desc.textContent = hardSkillCats[i].description;
+            }
+          });
+        }
+
+        // Update HardSkills certifications
+        const certsTitle = document.querySelector('#hard-skills h3');
+        if (certsTitle && t.hardSkills.certifications && t.hardSkills.certifications.title) {
+          certsTitle.textContent = t.hardSkills.certifications.title;
+        }
+
+        const certCards = document.querySelectorAll('#hard-skills .glass-card:not(.card-3d)');
+        if (certCards && certCards.length > 0 && t.hardSkills.certifications && t.hardSkills.certifications.items) {
+          certCards.forEach((card, i) => {
+            if (card && t.hardSkills.certifications.items[i]) {
+              const name = card.querySelector('h4');
+              const desc = card.querySelector('p.text-sm');
+              if (name) name.textContent = t.hardSkills.certifications.items[i].name;
+              if (desc) desc.textContent = t.hardSkills.certifications.items[i].description;
+            }
+          });
+        }
+      }
+
+      // Update SoftSkills section
+      if (t.softSkills) {
+        const softSkillsTitle = document.querySelector('#soft-skills h2');
+        const softSkillsSubtitle = document.querySelector('#soft-skills p.text-lg');
+        if (softSkillsTitle) softSkillsTitle.textContent = t.softSkills.title;
+        if (softSkillsSubtitle) softSkillsSubtitle.textContent = t.softSkills.subtitle;
+
+        // Update SoftSkills categories
+        const softSkillCards = document.querySelectorAll('#soft-skills .glass-card.card-3d');
+        if (softSkillCards && softSkillCards.length > 0) {
+          const softSkillCats = [
+            t.softSkills.categories.communication,
+            t.softSkills.categories.leadership,
+            t.softSkills.categories.problemSolving,
+            t.softSkills.categories.projectManagement,
+            t.softSkills.categories.adaptability,
+            t.softSkills.categories.business
+          ];
+
+          softSkillCards.forEach((card, i) => {
+            if (card && softSkillCats[i]) {
+              const title = card.querySelector('h3');
+              if (title) title.textContent = softSkillCats[i].title;
+
+              const skillItems = card.querySelectorAll('li span');
+              if (skillItems && skillItems.length > 0) {
+                skillItems.forEach((item, idx) => {
+                  if (item && softSkillCats[i].items[idx]) {
+                    item.textContent = softSkillCats[i].items[idx];
+                  }
+                });
+              }
+            }
+          });
+        }
+
+        // Update SoftSkills highlights
+        const highlightsTitle = document.querySelector('#soft-skills .glass-card:not(.card-3d) h3');
+        if (highlightsTitle && t.softSkills.highlights && t.softSkills.highlights.title) {
+          highlightsTitle.textContent = t.softSkills.highlights.title;
+        }
+
+        const highlightCards = document.querySelectorAll('#soft-skills .glass-card:not(.card-3d) .group');
+        if (highlightCards && highlightCards.length > 0 && t.softSkills.highlights && t.softSkills.highlights.items) {
+          highlightCards.forEach((card, i) => {
+            if (card && t.softSkills.highlights.items[i]) {
+              const title = card.querySelector('h4');
+              const desc = card.querySelector('p.text-sm');
+              if (title) title.textContent = t.softSkills.highlights.items[i].title;
+              if (desc) desc.textContent = t.softSkills.highlights.items[i].description;
+            }
+          });
+        }
+      }
     }
 
     // Language switcher - Desktop
