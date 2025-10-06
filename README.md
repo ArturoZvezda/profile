@@ -1,4 +1,4 @@
-# Arturo Zvezda (Arturo Israel Garcia Castro) - Portfolio
+# Arturo Zvezda - Portfolio
 
 A modern, multilingual (English/Spanish) portfolio website built with Astro and Tailwind CSS.
 
